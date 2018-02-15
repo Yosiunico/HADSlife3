@@ -1,0 +1,6 @@
+C:\Users\JOsb\Desktop\HADSlife3\DBManager\bin\Debug\DBManager.dll
+C:\Users\JOsb\Desktop\HADSlife3\DBManager\bin\Debug\DBManager.pdb
+C:\Users\JOsb\Desktop\HADSlife3\DBManager\obj\Debug\DBManager.csprojResolveAssemblyReference.cache
+C:\Users\JOsb\Desktop\HADSlife3\DBManager\obj\Debug\DBManager.csproj.CoreCompileInputs.cache
+C:\Users\JOsb\Desktop\HADSlife3\DBManager\obj\Debug\DBManager.dll
+C:\Users\JOsb\Desktop\HADSlife3\DBManager\obj\Debug\DBManager.pdb

@@ -7,3 +7,14 @@ C:\Users\Michel\Documents\Visual Studio 2017\Projects\Lab2(2)\Lab2(2)\obj\Debug\
 C:\Users\Michel\Documents\Visual Studio 2017\Projects\Lab2(2)\Lab2(2)\obj\Debug\Lab2(2).csproj.CoreCompileInputs.cache
 C:\Users\Michel\Documents\Visual Studio 2017\Projects\Lab2(2)\Lab2(2)\obj\Debug\Lab2(2).dll
 C:\Users\Michel\Documents\Visual Studio 2017\Projects\Lab2(2)\Lab2(2)\obj\Debug\Lab2(2).pdb
+C:\Users\JOsb\Desktop\HADSlife3\Lab2(2)\bin\Lab2(2).dll.config
+C:\Users\JOsb\Desktop\HADSlife3\Lab2(2)\bin\Lab2(2).dll
+C:\Users\JOsb\Desktop\HADSlife3\Lab2(2)\bin\Lab2(2).pdb
+C:\Users\JOsb\Desktop\HADSlife3\Lab2(2)\bin\DBManager.dll
+C:\Users\JOsb\Desktop\HADSlife3\Lab2(2)\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\JOsb\Desktop\HADSlife3\Lab2(2)\bin\DBManager.pdb
+C:\Users\JOsb\Desktop\HADSlife3\Lab2(2)\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\JOsb\Desktop\HADSlife3\Lab2(2)\obj\Debug\Lab2(2).csprojResolveAssemblyReference.cache
+C:\Users\JOsb\Desktop\HADSlife3\Lab2(2)\obj\Debug\Lab2(2).csproj.CoreCompileInputs.cache
+C:\Users\JOsb\Desktop\HADSlife3\Lab2(2)\obj\Debug\Lab2(2).dll
+C:\Users\JOsb\Desktop\HADSlife3\Lab2(2)\obj\Debug\Lab2(2).pdb
