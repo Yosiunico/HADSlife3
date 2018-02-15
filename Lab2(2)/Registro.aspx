@@ -18,6 +18,9 @@
             <asp:Label ID="Label1" runat="server" CssClass="auto-style1" Text="Registro"></asp:Label>
             <br />
             <br />
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Inicio.aspx" Target="_self">Inicio</asp:HyperLink>
+            <br />
+            <br />
             <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtboxEmail" runat="server"></asp:TextBox>

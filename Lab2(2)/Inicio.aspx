@@ -21,11 +21,11 @@
         <div class="auto-style1">
             <asp:Label ID="Label1" runat="server" CssClass="auto-style2" Text="Inicio"></asp:Label>
             <br />
-            <asp:Button ID="Button1" runat="server" Text="Registrarse" />
             <br />
-            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Login" />
             <br />
-            <asp:Button ID="Button3" runat="server" Text="Cambiar Password" />
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Registro.aspx" Target="_self">Registrarse</asp:HyperLink>
+            <br />
+            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/CambiarPassword.aspx" Target="_self">Cambiar contraseña</asp:HyperLink>
         </div>
     </form>
 </body>

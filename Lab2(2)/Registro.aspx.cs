@@ -13,5 +13,10 @@ namespace Lab2_2_
         {
 
         }
+
+        protected void btnRegistro0_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

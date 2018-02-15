@@ -18,6 +18,10 @@
             <asp:Label ID="Label1" runat="server" CssClass="auto-style1" Text="Cambiar Contraseña"></asp:Label>
             <br />
             <br />
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Inicio.aspx" Target="_self">Inicio</asp:HyperLink>
+            <br />
+            <br />
+            <br />
             <asp:Label ID="Label3" runat="server" Text="Email "></asp:Label>
 &nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtboxEmail" runat="server"></asp:TextBox>
