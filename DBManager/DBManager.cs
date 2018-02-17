@@ -24,6 +24,7 @@ namespace DBManager
             }
             return "CONEXION OK";
         }
+
         public void CerrarConexion()
         {
             conexion.Close();

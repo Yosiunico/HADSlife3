@@ -11,7 +11,7 @@ namespace Lab2_2_
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None; //Para evitar errores que surgían en validación.
         }
     }
 }
