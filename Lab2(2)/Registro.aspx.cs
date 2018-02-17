@@ -17,14 +17,11 @@ namespace Lab2_2_
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('¡Usuario insertado correctamente!')", true);
         }
 
-        protected void btnRegistro0_Click(object sender, EventArgs e)
-        {
-            //db.InsertarUsuario();
-        }
-
         protected void btnRegistro_Click(object sender, EventArgs e)
         {
-
+            Random rnd = new Random();
+            int NumConf = (int)(rnd.Next() * 9000000) + 1000000;
+            db.InsertarUsuario(txtboxEmail.Text,txtboxNomYApe.Text,txtboxApellidos.Text,NumConf,false,ddRol.Text,txtboxPsw.Text);
         }
     }
 }
