@@ -13,13 +13,18 @@ namespace Lab2_2_
         DBManager.DBManager db = new DBManager.DBManager();
         protected void Page_Load(object sender, EventArgs e)
         {
-            db.Conectar();
+            lblDev.Text = db.Conectar();
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('¡Usuario insertado correctamente!')", true);
         }
 
         protected void btnRegistro0_Click(object sender, EventArgs e)
         {
-            db.InsertarUsuario(txt);
+            //db.InsertarUsuario();
+        }
+
+        protected void btnRegistro_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
