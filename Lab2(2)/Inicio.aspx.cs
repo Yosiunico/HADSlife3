@@ -16,8 +16,6 @@ namespace Lab2_2_
             Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None; //Para evitar errores que surgían en validación.
             db.Conectar();
             //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('¡Usuario insertado correctamente!')", true);
-            EmailServices.EmailServices es = new EmailServices.EmailServices();
-            es.EnviarEmail("fostergun123@gmail.com", "Prueba email", "<html><head><h1>HOLA MUNDO!</h1></head><body></body></html>");
         }
 
         protected void Button1_Click(object sender, EventArgs e)
