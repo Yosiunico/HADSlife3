@@ -3,33 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Mail;
+using System.Net;
+using System.Net.Mail;
 
 namespace EmailServices
 {
     public class EmailServices
     {
+        public const string emailemisor = "hads202018@gmail.com";
+        public const string passemisor = "";
 
         public void EnviarEmail(string destinatario, string asunto, string mensaje)
         {
-            MailMessage mail = new MailMessage();
+            var dirDe = new MailAddress(emailemisor, emailemisor);
+            var dirA = new MailAddress(destinatario, destinatario);
+            string dirDePass = passemisor;
 
-            mail.To = destinatario;
-            mail.From = "remitente@example.com"; //Aquí iría el correo con el que enviaremos los emails.
-            mail.BodyFormat = MailFormat.Html;  //Para enviar email con formato.
-            mail.Subject = asunto;
-            mail.Body = mensaje;
-
-            try
+            var smtp = new SmtpClient
             {
-                mail.Fields["http://schemas.microsoft.com/cdo/configuration/smtpauthenticate"] = 1;
-                mail.Fields["http://schemas.microsoft.com/cdo/configuration/sendusername"] = "usuario"; //Aquí iría el correo con el que enviaremos los emails.
-                mail.Fields["http://schemas.microsoft.com/cdo/configuration/sendpassword"] = "clave"; //Aquí iría la contraseña del correo con el que enviaremos los emails.
-                SmtpMail.SmtpServer = "smtpserver"; //Servidor smtp que se utilizará para enviar los emails.
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(dirDe.Address, dirDePass)
+            };
 
-                SmtpMail.Send(mail);
-            } catch (Exception MailEx) {
-                throw new Exception(MailEx.Message);
+            using (var message = new MailMessage(dirDe, dirA)
+            {
+                Subject = asunto,
+                Body = mensaje
+            })
+            {
+                smtp.Send(message);
             }
         }
     }

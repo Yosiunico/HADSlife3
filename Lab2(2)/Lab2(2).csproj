@@ -125,6 +125,10 @@
       <Project>{a684c519-bfa3-4c7a-8461-29b1fa72f467}</Project>
       <Name>DBManager</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EmailServices\EmailServices.csproj">
+      <Project>{B20DD200-D6AF-4C99-BF00-557AE9A7A486}</Project>
+      <Name>EmailServices</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
