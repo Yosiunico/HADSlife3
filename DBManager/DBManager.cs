@@ -42,7 +42,7 @@ namespace DBManager
             conexion.Close();
         }
 
-        public string InsertarUsuario(string email, string nombre, string apellidos,int numConfir, bool confirmado, string tipo, string pass)
+        public bool InsertarUsuario(string email, string nombre, string apellidos,int numConfir, bool confirmado, string tipo, string pass)
         {
             comando = new System.Data.SqlClient.SqlCommand("insert into Usuarios (email,nombre,apellidos,numconfir,confirmado,tipo,pass) values (@email,@nombre,@apellidos,@numconfir,@confirmado,@tipo,@pass)", conexion);
             comando.Parameters.AddWithValue("@email", email);
@@ -60,10 +60,10 @@ namespace DBManager
             }
             catch(Exception ex)
             {
-                return ex.Message;
+                return false;
             }
 
-            return numRegs + "registro(s) insertado(s) en la BD" ;
+            return true;
 
         }
 
@@ -86,6 +86,20 @@ namespace DBManager
             bool existe = reader.Read();
             reader.Close();
             return existe;
+        }
+
+        public bool ConfirmarCuenta(string email, int cod) {
+            comando = new System.Data.SqlClient.SqlCommand("SELECT numconfir FROM Usuarios WHERE email=@email", conexion);
+            comando.Parameters.AddWithValue("@email", email);
+            SqlDataReader reader = comando.ExecuteReader();
+            reader.Read();
+            int dbCod = int.Parse(reader["numconfir"].ToString());
+            reader.Close();
+
+            comando = new System.Data.SqlClient.SqlCommand("UPDATE usuarios SET confirmado = 1 WHERE email=@email", conexion);
+            comando.Parameters.AddWithValue("@email", email);
+            comando.ExecuteNonQuery();
+            return dbCod.Equals(cod);
         }
 
     }

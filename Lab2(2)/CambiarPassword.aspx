@@ -29,7 +29,7 @@
             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtboxEmail" EnableClientScript="False" ErrorMessage="Email incorrecto" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ForeColor="Red"></asp:RegularExpressionValidator>
             <br />
             <br />
-            <asp:Button ID="btnMandarMail" runat="server" Text="Cambiar contraseña" />
+            <asp:Button ID="btnMandarMail" runat="server" Text="Cambiar contraseña" OnClick="btnMandarMail_Click" />
             <br />
             <br />
             <asp:Label ID="Label4" runat="server" Text="Código"></asp:Label>
