@@ -19,13 +19,14 @@ namespace Lab2_2_
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
             if (db.ExisteEmail(TextBox1.Text))
             {
                 if (db.UsuarioValidado(TextBox1.Text))
                 {
                     if (db.SesionValida(TextBox1.Text, TextBox2.Text))
                     {
-                        Server.Transfer("Page2.aspx", true);
+                        Server.Transfer("Home.aspx", true);
                     } else {
                         Label4.Text = "La contraseña es incorrecta, por favor, inténtelo de nuevo.";
                     }
@@ -35,6 +36,7 @@ namespace Lab2_2_
             } else {
                 Label4.Text = "El email que ha introducido no es válido ni está registrado.";
             }
+
         }
     }
 }

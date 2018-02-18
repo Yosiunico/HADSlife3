@@ -30,8 +30,11 @@ namespace DBManager
         {
             comando = new System.Data.SqlClient.SqlCommand("select confirmado from Usuarios where email=@email", conexion);
             comando.Parameters.AddWithValue("@email", email);
-
-            return comando.ExecuteReader().GetFieldData(0);
+            SqlDataReader reader = comando.ExecuteReader();
+            reader.Read();
+            bool confirmado = (bool) reader["confirmado"];
+            reader.Close();
+            return confirmado;
         }
 
         public void CerrarConexion()
@@ -68,16 +71,22 @@ namespace DBManager
         {
             comando = new System.Data.SqlClient.SqlCommand("select pass from Usuarios where email=@email", conexion);
             comando.Parameters.AddWithValue("@email", email);
-
-            return pass.Equals(comando.ExecuteReader().GetFieldData(0));
+            SqlDataReader reader = comando.ExecuteReader();
+            reader.Read();
+            string passcomp = reader["pass"].ToString();
+            reader.Close();
+            return passcomp.Equals(pass);
         }
 
         public bool ExisteEmail(string email)
-        {
-            comando = new System.Data.SqlClient.SqlCommand("select pass from Usuarios where email=@email", conexion);
+        {   
+            comando = new System.Data.SqlClient.SqlCommand("select email from Usuarios where email=@email", conexion);
             comando.Parameters.AddWithValue("@email", email);
-
-            return email.Equals(comando.ExecuteReader().GetFieldData(0));
+            SqlDataReader reader = comando.ExecuteReader();
+            bool existe = reader.Read();
+            reader.Close();
+            return existe;
         }
+
     }
 }
