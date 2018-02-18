@@ -24,13 +24,13 @@
             <br />
             <asp:Label ID="Label2" runat="server" Text="Email"></asp:Label>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Formato de email inválido" ForeColor="Red"></asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Formato de email inválido" ForeColor="Red" ControlToValidate="TextBox1"></asp:RegularExpressionValidator>
             <br />
             <asp:TextBox ID="TextBox1" runat="server" style="margin-top: 6px" TextMode="Email"></asp:TextBox>
             <br />
             <br />
             <asp:Label ID="Label3" runat="server" Text="Contraseña"></asp:Label>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="TextBox2"></asp:RequiredFieldValidator>
             <br />
             <asp:TextBox ID="TextBox2" runat="server" style="margin-top: 6px" TextMode="Password"></asp:TextBox>
             <br />
