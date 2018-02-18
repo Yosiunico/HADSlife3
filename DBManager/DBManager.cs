@@ -102,5 +102,20 @@ namespace DBManager
             return dbCod.Equals(cod);
         }
 
+        public int GetCodigo(string email) {
+            if (ExisteEmail(email))
+            {
+                comando = new System.Data.SqlClient.SqlCommand("SELECT numconfir FROM usuarios WHERE email=@email",conexion);
+                comando.Parameters.AddWithValue("@email", email);
+                SqlDataReader reader = comando.ExecuteReader();
+                reader.Read();
+                int cod = int.Parse(reader["numconfir"].ToString());
+                return cod;
+            }
+            else {
+                return -1;
+            }
+        }
+
     }
 }
