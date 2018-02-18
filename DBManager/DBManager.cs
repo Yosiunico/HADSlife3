@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,14 @@ namespace DBManager
             return "CONEXION OK";
         }
 
+        public bool UsuarioValidado(string email)
+        {
+            comando = new System.Data.SqlClient.SqlCommand("select confirmado from Usuarios where email=@email", conexion);
+            comando.Parameters.AddWithValue("@email", email);
+
+            return comando.ExecuteReader().GetFieldData(0);
+        }
+
         public void CerrarConexion()
         {
             conexion.Close();
@@ -41,6 +50,7 @@ namespace DBManager
             comando.Parameters.AddWithValue("@tipo", tipo);
             comando.Parameters.AddWithValue("@pass", pass);
             int numRegs;
+
             try
             {
                 numRegs = comando.ExecuteNonQuery();
@@ -49,8 +59,25 @@ namespace DBManager
             {
                 return ex.Message;
             }
+
             return numRegs + "registro(s) insertado(s) en la BD" ;
 
+        }
+
+        public bool SesionValida(string email, string pass)
+        {
+            comando = new System.Data.SqlClient.SqlCommand("select pass from Usuarios where email=@email", conexion);
+            comando.Parameters.AddWithValue("@email", email);
+
+            return pass.Equals(comando.ExecuteReader().GetFieldData(0));
+        }
+
+        public bool ExisteEmail(string email)
+        {
+            comando = new System.Data.SqlClient.SqlCommand("select pass from Usuarios where email=@email", conexion);
+            comando.Parameters.AddWithValue("@email", email);
+
+            return email.Equals(comando.ExecuteReader().GetFieldData(0));
         }
     }
 }

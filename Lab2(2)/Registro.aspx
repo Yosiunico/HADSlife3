@@ -72,7 +72,7 @@
             <asp:Label ID="Label3" runat="server" Text="Contraseña"></asp:Label>
                     </td>
                     <td class="auto-style3">
-            <asp:TextBox ID="txtboxPsw" runat="server" TextMode="Password"></asp:TextBox>
+            <asp:TextBox ID="txtboxPsw" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style4">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtboxPsw" ErrorMessage="*" ForeColor="Red" EnableClientScript="False"></asp:RequiredFieldValidator>
@@ -83,7 +83,7 @@
             <asp:Label ID="Label4" runat="server" Text="Repetir contraseña"></asp:Label>
                     </td>
                     <td class="auto-style3">
-            <asp:TextBox ID="txtboxRPsw" runat="server" TextMode="Password"></asp:TextBox>
+            <asp:TextBox ID="txtboxRPsw" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style4">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtboxRPsw" ErrorMessage="*" ForeColor="Red" EnableClientScript="False"></asp:RequiredFieldValidator>
