@@ -11,6 +11,9 @@
         .auto-style1 {
             font-size: xx-large;
         }
+        .auto-style2 {
+            height: 60px;
+        }
     </style>
 </head>
 <body>
@@ -21,21 +24,12 @@
             <br />
             <asp:Label ID="ErrorLabel" runat="server" ForeColor="Red" Text="¡Error!" Visible="False"></asp:Label>
             <br />
-            <asp:Label ID="Label2" runat="server" Text="Email"></asp:Label>
-            <asp:TextBox ID="TextBox1" runat="server" Height="16px" style="margin-left: 180px; margin-top: 0px; margin-bottom: 0px" Width="117px"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" EnableClientScript="False" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox1" EnableClientScript="False" ErrorMessage="Correo incorrecto" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-            <br />
-            <asp:Label ID="Label3" runat="server" Text="Código de confirmación"></asp:Label>
-            <asp:TextBox ID="TextBox2" runat="server" style="margin-left: 67px" TextMode="Number" Width="116px"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" EnableClientScript="False" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
-            <br />
+            <div id="Div1" runat="server" class="auto-style2">
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Inicio.aspx">Ir a la pagina de Login</asp:HyperLink>
+            </div>
             <br />
             <br />
         </div>
-        <p>
-            <asp:Button ID="Button1" runat="server" Text="Confirmar" />
-        </p>
     </form>
 </body>
 </html>

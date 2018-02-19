@@ -4,3 +4,9 @@ C:\Users\Michel\Documents\Visual Studio 2017\Projects\HADSlife3\EmailServices\ob
 C:\Users\Michel\Documents\Visual Studio 2017\Projects\HADSlife3\EmailServices\obj\Debug\EmailServices.csproj.CoreCompileInputs.cache
 C:\Users\Michel\Documents\Visual Studio 2017\Projects\HADSlife3\EmailServices\obj\Debug\EmailServices.dll
 C:\Users\Michel\Documents\Visual Studio 2017\Projects\HADSlife3\EmailServices\obj\Debug\EmailServices.pdb
+C:\Users\JOsb\Desktop\Nueva carpeta\HADSlife3\EmailServices\bin\Debug\EmailServices.dll
+C:\Users\JOsb\Desktop\Nueva carpeta\HADSlife3\EmailServices\bin\Debug\EmailServices.pdb
+C:\Users\JOsb\Desktop\Nueva carpeta\HADSlife3\EmailServices\obj\Debug\EmailServices.csprojResolveAssemblyReference.cache
+C:\Users\JOsb\Desktop\Nueva carpeta\HADSlife3\EmailServices\obj\Debug\EmailServices.csproj.CoreCompileInputs.cache
+C:\Users\JOsb\Desktop\Nueva carpeta\HADSlife3\EmailServices\obj\Debug\EmailServices.dll
+C:\Users\JOsb\Desktop\Nueva carpeta\HADSlife3\EmailServices\obj\Debug\EmailServices.pdb

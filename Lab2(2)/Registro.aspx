@@ -14,7 +14,7 @@
             width: 159px;
         }
         .auto-style3 {
-            width: 178px;
+            width: 667px;
         }
         .auto-style4 {
             width: 964px;
@@ -39,11 +39,11 @@
                     </td>
                     <td class="auto-style3">
             <asp:TextBox ID="txtboxEmail" runat="server"></asp:TextBox>
-                    </td>
-                    <td class="auto-style4">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtboxEmail" ErrorMessage="*" ForeColor="Red" EnableClientScript="False"></asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtboxEmail" EnableClientScript="False" ErrorMessage="Email incorrecto" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                     </td>
+                    <td class="auto-style4">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
@@ -51,10 +51,10 @@
                     </td>
                     <td class="auto-style3">
             <asp:TextBox ID="txtboxNomYApe" runat="server"></asp:TextBox>
-                    </td>
-                    <td class="auto-style4">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtboxNomYApe" EnableClientScript="False" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
+                    <td class="auto-style4">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
@@ -62,33 +62,33 @@
                     </td>
                     <td class="auto-style3">
             <asp:TextBox ID="txtboxApellidos" runat="server"></asp:TextBox>
-                    </td>
-                    <td class="auto-style4">
             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*" ControlToValidate="txtboxApellidos" EnableClientScript="False" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
+                    <td class="auto-style4">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
             <asp:Label ID="Label3" runat="server" Text="Contraseña"></asp:Label>
                     </td>
                     <td class="auto-style3">
-            <asp:TextBox ID="txtboxPsw" runat="server"></asp:TextBox>
-                    </td>
-                    <td class="auto-style4">
+            <asp:TextBox ID="txtboxPsw" runat="server" TextMode="Password"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtboxPsw" ErrorMessage="*" ForeColor="Red" EnableClientScript="False"></asp:RequiredFieldValidator>
                     </td>
+                    <td class="auto-style4">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
             <asp:Label ID="Label4" runat="server" Text="Repetir contraseña"></asp:Label>
                     </td>
                     <td class="auto-style3">
-            <asp:TextBox ID="txtboxRPsw" runat="server"></asp:TextBox>
-                    </td>
-                    <td class="auto-style4">
+            <asp:TextBox ID="txtboxRPsw" runat="server" TextMode="Password"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtboxRPsw" ErrorMessage="*" ForeColor="Red" EnableClientScript="False"></asp:RequiredFieldValidator>
             <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtboxPsw" ControlToValidate="txtboxRPsw" EnableClientScript="False" ErrorMessage="Las contraseñas no coinciden" ForeColor="Red"></asp:CompareValidator>
                     </td>
+                    <td class="auto-style4">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
