@@ -25,7 +25,7 @@ namespace Lab2_2_
             bool insertado = db.InsertarUsuario(txtboxEmail.Text,txtboxNomYApe.Text,txtboxApellidos.Text,NumConf,false,ddRol.Text,txtboxPsw.Text);
             if (insertado)
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('¡Usuario insertado correctamente!')", true);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('¡Usuario insertado correctamente! En breve recibiras un correo electronico para confirmar tu cuenta')", true);
                 EmailServices.EmailServices emailServices = new EmailServices.EmailServices();
                 emailServices.EnviarEmail(txtboxEmail.Text,"Confirmar cuenta", "http://localhost:50887/Confirmar.aspx?email="+ txtboxEmail.Text +"&cod=" + NumConf.ToString());
             }

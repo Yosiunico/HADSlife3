@@ -110,10 +110,25 @@ namespace DBManager
                 SqlDataReader reader = comando.ExecuteReader();
                 reader.Read();
                 int cod = int.Parse(reader["numconfir"].ToString());
+                reader.Close();
                 return cod;
             }
             else {
                 return -1;
+            }
+        }
+        public bool SetPassword(string email, string passw){
+            if (ExisteEmail(email))
+            {
+                comando = new System.Data.SqlClient.SqlCommand("UPDATE usuarios SET pass=@pass WHERE email=@email", conexion);
+                comando.Parameters.AddWithValue("@pass", passw);
+                comando.Parameters.AddWithValue("@email", email);
+                int numFilas = comando.ExecuteNonQuery();
+                return numFilas == 1;
+            }
+            else
+            {
+                return false;
             }
         }
 

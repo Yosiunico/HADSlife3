@@ -25,7 +25,7 @@ namespace Lab2_2_
                 bool conf = db.ConfirmarCuenta(email, int.Parse(cod));
                 if (conf)
                 {
-                    ErrorLabel.Text = "Cuenta confirmada correctamente!! Seras redirigido en 5 segundos";
+                    ErrorLabel.Text = "Cuenta confirmada correctamente!!";
 
                 }
                 else
