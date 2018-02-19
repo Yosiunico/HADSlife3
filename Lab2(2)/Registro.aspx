@@ -38,7 +38,7 @@
             <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
                     </td>
                     <td class="auto-style3">
-            <asp:TextBox ID="txtboxEmail" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtboxEmail" runat="server" TextMode="Email"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtboxEmail" ErrorMessage="*" ForeColor="Red" EnableClientScript="False"></asp:RequiredFieldValidator>
             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtboxEmail" EnableClientScript="False" ErrorMessage="Email incorrecto" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                     </td>

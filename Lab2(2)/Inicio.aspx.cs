@@ -15,7 +15,6 @@ namespace Lab2_2_
         {
             Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None; //Para evitar errores que surgían en validación.
             db.Conectar();
-            //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('¡Usuario insertado correctamente!')", true);
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -27,6 +26,8 @@ namespace Lab2_2_
                 {
                     if (db.SesionValida(TextBox1.Text, TextBox2.Text))
                     {
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('¡Log in correcto! ¡Bienvenido " + TextBox1.Text + "!')", true);
+                        Session["usuario"] = TextBox1.Text;
                         Server.Transfer("Home.aspx", true);
                     } else {
                         Label4.Text = "La contraseña es incorrecta, por favor, inténtelo de nuevo.";

@@ -12,7 +12,7 @@
         <div>
         </div>
         ¡Bienvenido a la página principal!<p>
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Inicio.aspx">Log Out</asp:HyperLink>
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Log out" />
         </p>
     </form>
 </body>
