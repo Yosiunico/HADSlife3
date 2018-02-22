@@ -34,7 +34,7 @@ namespace Lab2_2_
             EmailServices.EmailServices emailServices = new EmailServices.EmailServices();
             int cod = dBManager.GetCodigo(txtboxEmail.Text);
             if (cod != -1) {
-                emailServices.EnviarEmail(txtboxEmail.Text,"Cambiar contraseña", "http://localhost:50887/CambiarPassword.aspx?email="+txtboxEmail.Text +"&cod="+cod);
+                emailServices.EnviarEmail(txtboxEmail.Text,"Cambiar contraseña", HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) + "/CambiarPassword.aspx?email=" +txtboxEmail.Text +"&cod="+cod);
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('¡Email mandado correctamente! En breve recibiras un correo electronico para confirmar tu cuenta')", true);
             }
 

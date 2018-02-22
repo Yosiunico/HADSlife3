@@ -1,0 +1,5 @@
+C:\Users\JOsb\Desktop\Nueva carpeta\HADSlife3\EmailServices\bin\Release\EmailServices.dll
+C:\Users\JOsb\Desktop\Nueva carpeta\HADSlife3\EmailServices\bin\Release\EmailServices.pdb
+C:\Users\JOsb\Desktop\Nueva carpeta\HADSlife3\EmailServices\obj\Release\EmailServices.csproj.CoreCompileInputs.cache
+C:\Users\JOsb\Desktop\Nueva carpeta\HADSlife3\EmailServices\obj\Release\EmailServices.dll
+C:\Users\JOsb\Desktop\Nueva carpeta\HADSlife3\EmailServices\obj\Release\EmailServices.pdb

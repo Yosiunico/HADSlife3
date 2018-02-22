@@ -67,6 +67,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\hadslife2 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\hadslife2 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
