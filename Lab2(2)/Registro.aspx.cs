@@ -27,7 +27,7 @@ namespace Lab2_2_
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('¡Usuario insertado correctamente! En breve recibiras un correo electronico para confirmar tu cuenta')", true);
                 EmailServices.EmailServices emailServices = new EmailServices.EmailServices();
-                emailServices.EnviarEmail(txtboxEmail.Text,"Confirmar cuenta", "http://localhost:50887/Confirmar.aspx?email="+ txtboxEmail.Text +"&cod=" + NumConf.ToString());
+                emailServices.EnviarEmail(txtboxEmail.Text,"Confirmar cuenta", HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) +"/Confirmar.aspx?email=" + txtboxEmail.Text +"&cod=" + NumConf.ToString());
             }
             else {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Usuario no insertado, consulte al administrador')", true);
