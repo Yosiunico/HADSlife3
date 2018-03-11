@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Alumno\Alumno.aspx" />
+    <Content Include="Alumno\TareasAlumno.aspx" />
     <Content Include="Confirmar.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="Web.config" />
@@ -92,6 +93,13 @@
     </Compile>
     <Compile Include="Alumno\Alumno.aspx.designer.cs">
       <DependentUpon>Alumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alumno\TareasAlumno.aspx.cs">
+      <DependentUpon>TareasAlumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alumno\TareasAlumno.aspx.designer.cs">
+      <DependentUpon>TareasAlumno.aspx</DependentUpon>
     </Compile>
     <Compile Include="Confirmar.aspx.cs">
       <DependentUpon>Confirmar.aspx</DependentUpon>

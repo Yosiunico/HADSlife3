@@ -28,7 +28,7 @@ namespace Lab2_2_
                     {
                         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('¡Log in correcto! ¡Bienvenido " + TextBox1.Text + "!')", true);
                         Session["usuario"] = TextBox1.Text;
-                        Server.Transfer("Home.aspx", true);
+                        Server.Transfer("Alumno/TareasAlumno.aspx", true);
                     } else {
                         Label4.Text = "La contraseña es incorrecta, por favor, inténtelo de nuevo.";
                     }

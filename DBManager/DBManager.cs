@@ -132,5 +132,29 @@ namespace DBManager
             }
         }
 
+        public List<String> getAsignaturasAlumno(string alumno)
+        {
+            comando = new System.Data.SqlClient.SqlCommand("select GC.codigoasig from (EstudiantesGrupo as EG inner join Usuarios as U on EG.Email = U.email) inner join GruposClase as GC on EG.Grupo = GC.codigo where U.email = @email;", conexion);
+            comando.Parameters.AddWithValue("@email", alumno);
+            SqlDataReader reader =  comando.ExecuteReader();
+            List<String> asignaturas = new List<string>();
+            while (reader.Read())
+            {
+                asignaturas.Add(reader["codigoasig"].ToString());
+            }
+            reader.Close();
+            return asignaturas;
+        }
+        public System.Data.DataSet getTareasGenericas(string alumno)
+        {
+            comando = new System.Data.SqlClient.SqlCommand("select TG.* from (EstudiantesGrupo as EG inner join GruposClase as GC on EG.Grupo = GC.codigo) inner join TareasGenericas as TG on TG.CodAsig = GC.codigoasig where EG.Email = @email;",conexion);
+            comando.Parameters.AddWithValue("@email", alumno);
+
+            SqlDataAdapter da = new SqlDataAdapter("select TG.* from (EstudiantesGrupo as EG inner join GruposClase as GC on EG.Grupo = GC.codigo) inner join TareasGenericas as TG on TG.CodAsig = GC.codigoasig where EG.Email ='" +alumno+"'", conexion);
+            System.Data.DataSet ds = new System.Data.DataSet();
+            da.Fill(ds, "TareasGenericas");
+            return ds;
+        }
+
     }
 }

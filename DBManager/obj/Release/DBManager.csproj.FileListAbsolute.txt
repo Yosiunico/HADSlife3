@@ -8,3 +8,4 @@ C:\Users\JOsb\Desktop\HADSlife3\DBManager\bin\Release\DBManager.pdb
 C:\Users\JOsb\Desktop\HADSlife3\DBManager\obj\Release\DBManager.csproj.CoreCompileInputs.cache
 C:\Users\JOsb\Desktop\HADSlife3\DBManager\obj\Release\DBManager.dll
 C:\Users\JOsb\Desktop\HADSlife3\DBManager\obj\Release\DBManager.pdb
+C:\Users\JOsb\Desktop\HADSlife3\DBManager\obj\Release\DBManager.csprojResolveAssemblyReference.cache
