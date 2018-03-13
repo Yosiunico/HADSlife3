@@ -35,6 +35,7 @@ namespace EmailServices
                 Body = mensaje
             })
             {
+                message.IsBodyHtml = true;
                 smtp.Send(message);
             }
         }

@@ -13,6 +13,11 @@ namespace Lab2_2_.Alumno
         private DBManager.DBManager dBManager = new DBManager.DBManager();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority).Contains("localhost"))
+            {
+                log.Visible = false;
+            }
+
             dBManager.Conectar();
             List<String> asignaturas = dBManager.getAsignaturasAlumno(Session["usuario"].ToString());
             DDAsignaturas.DataSource = asignaturas;

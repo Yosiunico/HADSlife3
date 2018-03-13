@@ -15,6 +15,10 @@ namespace Lab2_2_
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None; //Para evitar errores que surgían en validación.
+            if (!HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority).Contains("localhost"))
+            {
+                lblDev.Visible = false;
+            }
             lblDev.Text = db.Conectar();
         }
 
@@ -27,7 +31,7 @@ namespace Lab2_2_
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('¡Usuario insertado correctamente! En breve recibiras un correo electronico para confirmar tu cuenta')", true);
                 EmailServices.EmailServices emailServices = new EmailServices.EmailServices();
-                emailServices.EnviarEmail(txtboxEmail.Text,"Confirmar cuenta", HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) +"/Confirmar.aspx?email=" + txtboxEmail.Text +"&cod=" + NumConf.ToString());
+                emailServices.EnviarEmail(txtboxEmail.Text, "Confirmar cuenta", "<div><h1>Hola " + txtboxEmail.Text + ".</h1></div><div><h2>¡Confirme su cuenta a través de este enlace!</h2></div><a href='" + HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) + "/Confirmar.aspx?email=" + txtboxEmail.Text + "&cod=" + NumConf.ToString() + "'>Aqui</a>");
             }
             else {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Usuario no insertado, consulte al administrador')", true);

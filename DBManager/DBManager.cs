@@ -150,7 +150,7 @@ namespace DBManager
             comando = new System.Data.SqlClient.SqlCommand("select TG.* from (EstudiantesGrupo as EG inner join GruposClase as GC on EG.Grupo = GC.codigo) inner join TareasGenericas as TG on TG.CodAsig = GC.codigoasig where EG.Email = @email;",conexion);
             comando.Parameters.AddWithValue("@email", alumno);
 
-            SqlDataAdapter da = new SqlDataAdapter("select TG.* from (EstudiantesGrupo as EG inner join GruposClase as GC on EG.Grupo = GC.codigo) inner join TareasGenericas as TG on TG.CodAsig = GC.codigoasig where EG.Email ='" +alumno+"'", conexion);
+            SqlDataAdapter da = new SqlDataAdapter("select TG.* from ((EstudiantesGrupo as EG inner join GruposClase as GC on EG.Grupo = GC.codigo) inner join TareasGenericas as TG on TG.CodAsig = GC.codigoasig) inner join TareasPersonales as TP on TP.codigo != TG.codigo where EG.Email ='" +alumno+"'", conexion);
             System.Data.DataSet ds = new System.Data.DataSet();
             da.Fill(ds, "TareasGenericas");
             return ds;
