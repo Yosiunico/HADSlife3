@@ -147,7 +147,7 @@ namespace DBManager
         }
         public System.Data.DataSet getTareasGenericas(string alumno)
         {
-            SqlDataAdapter da = new SqlDataAdapter("select TG1.Codigo, TG1.Descripcion, TG1.HEstimadas, TG1.TipoTarea from(EstudiantesGrupo as EG inner join GruposClase as GC on EG.Grupo = GC.codigo) inner join TareasGenericas as TG1 on GC.codigoasig = TG1.CodAsig where EG.Email = '"+ alumno +"' and not exists(SELECT * FROM EstudiantesTareas WHERE CodTarea = TG1.Codigo and Email = EG.Email)", conexion);
+            SqlDataAdapter da = new SqlDataAdapter("select TG1.Codigo, TG1.Descripcion, TG1.HEstimadas, TG1.TipoTarea, GC.codigoasig from(EstudiantesGrupo as EG inner join GruposClase as GC on EG.Grupo = GC.codigo) inner join TareasGenericas as TG1 on GC.codigoasig = TG1.CodAsig where EG.Email = '"+ alumno +"' and not exists(SELECT * FROM EstudiantesTareas WHERE CodTarea = TG1.Codigo and Email = EG.Email)", conexion);
             System.Data.DataSet ds = new System.Data.DataSet();
             da.Fill(ds, "TareasGenericas");
             return ds; 

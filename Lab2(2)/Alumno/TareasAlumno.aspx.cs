@@ -17,13 +17,30 @@ namespace Lab2_2_.Alumno
             {
                 log.Visible = false;
             }
-
+            
             dBManager.Conectar();
-            List<String> asignaturas = dBManager.getAsignaturasAlumno(Session["usuario"].ToString());
-            DDAsignaturas.DataSource = asignaturas;
-            DDAsignaturas.DataBind();
+            if (!IsPostBack)
+            {
+                List<String> asignaturas = dBManager.getAsignaturasAlumno(Session["usuario"].ToString());
+                DDAsignaturas.DataSource = asignaturas;
+                DDAsignaturas.DataBind();
+                System.Data.DataTable dt = dBManager.getTareasGenericas(Session["usuario"].ToString()).Tables[0];
+                System.Data.DataView dv = new System.Data.DataView(dt);
+                dv.RowFilter = "codigoasig ='" + DDAsignaturas.Text.ToString() + "'";
+                Session["dataview"] = dv;
+                log.Text = dv.RowFilter.ToString();
+                GVAsignaturas.DataSource = dv;
+                GVAsignaturas.DataBind();
+            }
 
-            GVAsignaturas.DataSource = dBManager.getTareasGenericas(Session["usuario"].ToString()).Tables[0];
+        }
+
+        protected void DDAsignaturas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           System.Data.DataView dv = Session["dataview"] as System.Data.DataView;
+            dv.RowFilter = "codigoasig ='" + DDAsignaturas.Text.ToString() + "'";
+            log.Text += " //// "+ dv.RowFilter.ToString();
+            GVAsignaturas.DataSource = dv;
             GVAsignaturas.DataBind();
         }
     }

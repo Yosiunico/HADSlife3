@@ -46,7 +46,7 @@
             <br />
             Seleccionar asignatura (solo se muestran aquellas en las que está matriculado)<br />
             <br />
-            <asp:DropDownList ID="DDAsignaturas" runat="server">
+            <asp:DropDownList ID="DDAsignaturas" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDAsignaturas_SelectedIndexChanged">
             </asp:DropDownList>
             <br />
             <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
