@@ -49,8 +49,11 @@
             <asp:DropDownList ID="DDAsignaturas" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDAsignaturas_SelectedIndexChanged">
             </asp:DropDownList>
             <br />
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
-            <asp:GridView ID="GVAsignaturas" runat="server">
+            <br />
+            <asp:GridView ID="GVAsignaturas" runat="server" OnSelectedIndexChanged="GVAsignaturas_SelectedIndexChanged">
+                <Columns>
+                    <asp:CommandField SelectText="Instanciar" ShowSelectButton="True" />
+                </Columns>
             </asp:GridView>
             <br />
             <asp:Label ID="log" runat="server"></asp:Label>

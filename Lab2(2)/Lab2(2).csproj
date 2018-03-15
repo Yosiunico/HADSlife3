@@ -79,6 +79,7 @@
   <ItemGroup>
     <Content Include="Alumno\Alumno.aspx" />
     <Content Include="Alumno\TareasAlumno.aspx" />
+    <Content Include="Alumno\InstanciarTarea.aspx" />
     <Content Include="Confirmar.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="Web.config" />
@@ -100,6 +101,13 @@
     </Compile>
     <Compile Include="Alumno\TareasAlumno.aspx.designer.cs">
       <DependentUpon>TareasAlumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Alumno\InstanciarTarea.aspx.cs">
+      <DependentUpon>InstanciarTarea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alumno\InstanciarTarea.aspx.designer.cs">
+      <DependentUpon>InstanciarTarea.aspx</DependentUpon>
     </Compile>
     <Compile Include="Confirmar.aspx.cs">
       <DependentUpon>Confirmar.aspx</DependentUpon>
@@ -159,7 +167,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50887</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

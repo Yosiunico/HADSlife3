@@ -152,6 +152,11 @@ namespace DBManager
             da.Fill(ds, "TareasGenericas");
             return ds; 
         }
-
+        public System.Data.DataSet getTareasAlumno(string alumno) {
+            SqlDataAdapter da = new SqlDataAdapter("select * from EstudiantesTareas where Email="+ alumno, conexion);
+            System.Data.DataSet ds = new System.Data.DataSet();
+            da.Fill(ds,"EstudiantesTareas");
+            return ds;
+        }
     }
 }

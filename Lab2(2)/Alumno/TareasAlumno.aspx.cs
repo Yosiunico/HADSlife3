@@ -28,7 +28,6 @@ namespace Lab2_2_.Alumno
                 System.Data.DataView dv = new System.Data.DataView(dt);
                 dv.RowFilter = "codigoasig ='" + DDAsignaturas.Text.ToString() + "'";
                 Session["dataview"] = dv;
-                log.Text = dv.RowFilter.ToString();
                 GVAsignaturas.DataSource = dv;
                 GVAsignaturas.DataBind();
             }
@@ -39,9 +38,15 @@ namespace Lab2_2_.Alumno
         {
            System.Data.DataView dv = Session["dataview"] as System.Data.DataView;
             dv.RowFilter = "codigoasig ='" + DDAsignaturas.Text.ToString() + "'";
-            log.Text += " //// "+ dv.RowFilter.ToString();
             GVAsignaturas.DataSource = dv;
             GVAsignaturas.DataBind();
+        }
+
+        protected void GVAsignaturas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridViewRow gvr = GVAsignaturas.SelectedRow;
+            log.Text = "CodAsig --> " + gvr.Cells[1].Text;
+            Response.Redirect("InstanciarTarea.aspx?cod=" + gvr.Cells[1].Text + "&horas="+ gvr.Cells[3].Text);
         }
     }
 }
