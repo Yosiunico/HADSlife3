@@ -91,7 +91,7 @@
                 <tr>
                     <td class="auto-style10" colspan="2">
                         <br />
-                        <asp:Button ID="Button1" runat="server" Text="Crear tarea" Height="53px" style="text-align: center; margin-left: 91px; margin-right: 0px" Width="130px" />
+                        <asp:Button ID="Button1" runat="server" Text="Crear tarea" Height="53px" style="text-align: center; margin-left: 91px; margin-right: 0px" Width="130px" OnClick="Button1_Click" />
                     </td>
                     <td class="auto-style10"></td>
                 </tr>
