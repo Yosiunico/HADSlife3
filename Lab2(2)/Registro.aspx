@@ -97,8 +97,8 @@
                     </td>
                     <td class="auto-style3">
             <asp:DropDownList ID="ddRol" runat="server">
-                <asp:ListItem Value="profesor">Profesor</asp:ListItem>
-                <asp:ListItem Value="alumno">Alumno</asp:ListItem>
+                <asp:ListItem Value="Profesor">Profesor</asp:ListItem>
+                <asp:ListItem Value="Alumno">Alumno</asp:ListItem>
             </asp:DropDownList>
                     </td>
                     <td class="auto-style4">&nbsp;</td>

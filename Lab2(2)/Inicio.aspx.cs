@@ -28,14 +28,27 @@ namespace Lab2_2_
                     {
                         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('¡Log in correcto! ¡Bienvenido " + TextBox1.Text + "!')", true);
                         Session["usuario"] = TextBox1.Text;
-                        Server.Transfer("Alumno/TareasAlumno.aspx", true);
-                    } else {
+                        if (db.isAlumno(TextBox1.Text.ToString()))
+                        {
+                            Server.Transfer("Alumno/Alumno.aspx", true);
+                        }
+                        else
+                        {
+                            Server.Transfer("Home.aspx"); /// Aqui tiene que ir a la dirección del profesor  :D
+                        }
+                    }
+                    else
+                    {
                         Label4.Text = "La contraseña es incorrecta, por favor, inténtelo de nuevo.";
                     }
-                } else {
+                }
+                else
+                {
                     Label4.Text = "El usuario no ha sido validado.";
                 }
-            } else {
+            }
+            else
+            {
                 Label4.Text = "El email que ha introducido no es válido ni está registrado.";
             }
 

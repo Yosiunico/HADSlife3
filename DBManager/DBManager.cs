@@ -156,5 +156,15 @@ namespace DBManager
             SqlDataAdapter da = new SqlDataAdapter("select * from EstudiantesTareas where Email='"+ alumno +"'", conexion);
             return da;
         }
+        public bool isAlumno(string usuario) {
+            comando = new System.Data.SqlClient.SqlCommand("select tipo from Usuarios where email = @email;", conexion);
+            comando.Parameters.AddWithValue("@email", usuario);
+            SqlDataReader reader = comando.ExecuteReader();
+            String tipo;
+            reader.Read();
+            tipo = reader["tipo"].ToString();
+            reader.Close();
+            return tipo.Equals("Alumno");
+        }
     }
 }

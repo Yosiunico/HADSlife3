@@ -26,14 +26,14 @@ namespace Lab2_2_.Alumno
             txtBoxTarea.Text = Request.QueryString["cod"];
             txtBoxUsuario.Text = Session["usuario"].ToString();
             txtBoxEst.Text = Request.QueryString["horas"];
-                da = dBManager.getTareasAlumno(Session["usuario"].ToString());
-                ds = new System.Data.DataSet();
-                da.Fill(ds, "EstudiantesTareas");
-                cb = new SqlCommandBuilder(da);
-                dt = ds.Tables[0];
-                GVTareas.DataSource = dt;
-                GVTareas.DataBind();
-                }
+            da = dBManager.getTareasAlumno(Session["usuario"].ToString());
+            ds = new System.Data.DataSet();
+            da.Fill(ds, "EstudiantesTareas");
+            cb = new SqlCommandBuilder(da);
+            dt = ds.Tables[0];
+            GVTareas.DataSource = dt;
+            GVTareas.DataBind();
+        }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
