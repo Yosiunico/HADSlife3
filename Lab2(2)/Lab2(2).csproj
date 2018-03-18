@@ -81,6 +81,9 @@
     <Content Include="Alumno\TareasAlumno.aspx" />
     <Content Include="Alumno\InstanciarTarea.aspx" />
     <Content Include="Confirmar.aspx" />
+    <Content Include="Profesor\InsertarTarea.aspx" />
+    <Content Include="Profesor\Profesor.aspx" />
+    <Content Include="Profesor\TareasProfesor.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="Web.config" />
     <Content Include="Inicio.aspx" />
@@ -115,6 +118,27 @@
     </Compile>
     <Compile Include="Confirmar.aspx.designer.cs">
       <DependentUpon>Confirmar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesor\InsertarTarea.aspx.cs">
+      <DependentUpon>InsertarTarea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profesor\InsertarTarea.aspx.designer.cs">
+      <DependentUpon>InsertarTarea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesor\Profesor.aspx.cs">
+      <DependentUpon>Profesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profesor\Profesor.aspx.designer.cs">
+      <DependentUpon>Profesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profesor\TareasProfesor.aspx.cs">
+      <DependentUpon>TareasProfesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profesor\TareasProfesor.aspx.designer.cs">
+      <DependentUpon>TareasProfesor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Inicio.aspx.cs">
