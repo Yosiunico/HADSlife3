@@ -30,7 +30,7 @@
             <table style="width:100%;">
                 <tr>
                     <td class="auto-style2">
-                        <asp:HyperLink ID="HyperLink1" runat="server">Cerrar Sesión</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/LogOut.aspx">Cerrar Sesión</asp:HyperLink>
                     </td>
                     <td class="auto-style4" rowspan="2" style="vertical-align: middle; text-align: center;">
                         <asp:Label ID="Label1" runat="server" CssClass="auto-style3" Text="Alumnos"></asp:Label>

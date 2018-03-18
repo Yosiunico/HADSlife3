@@ -26,7 +26,7 @@ namespace Lab2_2_.Alumno
             }
             else
             {
-                Response.Redirect("Inicio.aspx");
+                Response.Redirect("../Inicio.aspx");
             }
 
             dBManager.Conectar();
@@ -34,10 +34,10 @@ namespace Lab2_2_.Alumno
             {
                 log.Visible = false;
             }
-            log.Text = Request.QueryString["cod"];
-            txtBoxTarea.Text = Request.QueryString["cod"];
+            log.Text = Session["cod"].ToString();
+            txtBoxTarea.Text = Session["cod"].ToString();
             txtBoxUsuario.Text = Session["usuario"].ToString();
-            txtBoxEst.Text = Request.QueryString["horas"];
+            txtBoxEst.Text = Session["horas"].ToString();
             da = dBManager.getTareasAlumno(Session["usuario"].ToString());
             ds = new System.Data.DataSet();
             da.Fill(ds, "EstudiantesTareas");
@@ -45,6 +45,10 @@ namespace Lab2_2_.Alumno
             dt = ds.Tables[0];
             GVTareas.DataSource = dt;
             GVTareas.DataBind();
+            if (IsPostBack) {
+                Button1.Enabled = false;
+                txtBoxReales.Enabled = false;
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)

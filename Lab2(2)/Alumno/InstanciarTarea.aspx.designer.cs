@@ -58,6 +58,15 @@ namespace Lab2_2_.Alumno {
         protected global::System.Web.UI.WebControls.TextBox txtBoxUsuario;
         
         /// <summary>
+        /// Control GVTareas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GVTareas;
+        
+        /// <summary>
         /// Control Label4.
         /// </summary>
         /// <remarks>
@@ -121,13 +130,13 @@ namespace Lab2_2_.Alumno {
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// Control GVTareas.
+        /// Control HyperLink1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GVTareas;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
         
         /// <summary>
         /// Control log.

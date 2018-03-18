@@ -17,10 +17,11 @@ namespace Lab2_2_
                 {
                     Server.Transfer("Profesor/Profesor.aspx", true);
                 }
+                
             }
             else
             {
-                Response.Redirect("Inicio.aspx");
+                Response.Redirect("../Inicio.aspx");
             }
 
         }

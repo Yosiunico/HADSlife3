@@ -13,10 +13,12 @@
         .auto-style3 {
             height: 26px;
             width: 158px;
+            background-color: #40B5C1;
         }
         .auto-style4 {
             width: 158px;
             height: 24px;
+            background-color: #40B5C1;
         }
         .auto-style5 {
             width: 100%;
@@ -33,9 +35,9 @@
             <table class="auto-style5">
                 <tr>
                     <td class="auto-style3">
-                        <asp:HyperLink ID="HyperLink1" runat="server">Tareas Genericas</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Alumno/TareasAlumno.aspx">Tareas Genericas</asp:HyperLink>
                     </td>
-                    <td rowspan="3" style="align-content; text-align: center; text-indent: 0px;">
+                    <td rowspan="3" style="align-content; text-align: center; text-indent: 0px; background-color: #3599A5;">
                         <asp:Label ID="Label1" runat="server" Text="Gestión Web de Tareas-Dedicación" CssClass="auto-style6"></asp:Label>
                         <br />
                         <br />

@@ -23,7 +23,6 @@
             height: 130px;
         }
         .auto-style6 {
-            height: 26px;
         }
         .auto-style8 {
             height: 26px;
@@ -59,7 +58,10 @@
                     <td class="auto-style8">
                         <asp:TextBox ID="txtBoxUsuario" runat="server" Enabled="False"></asp:TextBox>
                     </td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style6" rowspan="6">
+            <asp:GridView ID="GVTareas" runat="server">
+            </asp:GridView>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style9">
@@ -68,7 +70,6 @@
                     <td class="auto-style8">
                         <asp:TextBox ID="txtBoxTarea" runat="server" Enabled="False"></asp:TextBox>
                     </td>
-                    <td class="auto-style6"></td>
                 </tr>
                 <tr>
                     <td class="auto-style9">
@@ -77,28 +78,28 @@
                     <td class="auto-style8">
                         <asp:TextBox ID="txtBoxEst" runat="server" Enabled="False"></asp:TextBox>
                     </td>
-                    <td class="auto-style6">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style9">
                         <asp:Label ID="Label6" runat="server" Text="Horas Reales"></asp:Label>
                     </td>
                     <td class="auto-style8">
-                        <asp:TextBox ID="txtBoxReales" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtBoxReales" runat="server" TextMode="Number"></asp:TextBox>
                     </td>
-                    <td class="auto-style6">&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style10" colspan="2">
                         <br />
                         <asp:Button ID="Button1" runat="server" Text="Crear tarea" Height="53px" style="text-align: center; margin-left: 91px; margin-right: 0px" Width="130px" OnClick="Button1_Click" />
                     </td>
-                    <td class="auto-style10"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style10" colspan="2">
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Alumno/TareasAlumno.aspx">Página anterior</asp:HyperLink>
+                    </td>
                 </tr>
             </table>
             <br />
-            <asp:GridView ID="GVTareas" runat="server">
-            </asp:GridView>
             <br />
             <br />
             <br />

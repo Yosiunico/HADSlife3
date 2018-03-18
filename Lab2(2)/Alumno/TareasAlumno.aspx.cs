@@ -22,7 +22,7 @@ namespace Lab2_2_.Alumno
             }
             else
             {
-                Response.Redirect("Inicio.aspx");
+                Response.Redirect("../Inicio.aspx");
             }
 
             if (!HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority).Contains("localhost"))
@@ -58,7 +58,9 @@ namespace Lab2_2_.Alumno
         {
             GridViewRow gvr = GVAsignaturas.SelectedRow;
             log.Text = "CodAsig --> " + gvr.Cells[1].Text;
-            Response.Redirect("InstanciarTarea.aspx?cod=" + gvr.Cells[1].Text + "&horas="+ gvr.Cells[3].Text);
+            Session["cod"] = gvr.Cells[1].Text.ToString();
+            Session["horas"] = gvr.Cells[3].Text.ToString();
+            Response.Redirect("InstanciarTarea.aspx");
         }
     }
 }
