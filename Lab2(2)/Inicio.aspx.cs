@@ -30,12 +30,15 @@ namespace Lab2_2_
                         Session["usuario"] = TextBox1.Text;
                         if (db.isAlumno(TextBox1.Text.ToString()))
                         {
+                            Session["tipo"] = "alumno";
                             Server.Transfer("Alumno/Alumno.aspx", true);
                         }
                         else
                         {
-                            Server.Transfer("Home.aspx"); /// Aqui tiene que ir a la dirección del profesor  :D
+                            Session["tipo"] = "profesor";
+                            Server.Transfer("Profesor/Profesor.aspx", true); // Aqui tiene que ir a la dirección del profesor  :D
                         }
+
                     }
                     else
                     {

@@ -88,7 +88,7 @@
     <Content Include="Web.config" />
     <Content Include="Inicio.aspx" />
     <Content Include="CambiarPassword.aspx" />
-    <Content Include="Home.aspx" />
+    <Content Include="LogOut.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alumno\Alumno.aspx.cs">
@@ -162,12 +162,12 @@
     <Compile Include="CambiarPassword.aspx.designer.cs">
       <DependentUpon>CambiarPassword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
+    <Compile Include="LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
+    <Compile Include="LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

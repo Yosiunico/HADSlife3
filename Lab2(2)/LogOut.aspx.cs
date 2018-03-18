@@ -11,13 +11,6 @@ namespace Lab2_2_
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["usuario"] == null) {
-                Response.Redirect("Inicio.aspx");
-            }
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
             Session.Abandon();
             Response.Redirect("Inicio.aspx");
         }

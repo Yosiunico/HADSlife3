@@ -9,12 +9,17 @@
     <style type="text/css">
 
         .auto-style1 {
-            width: 1057px;
+            width: 789px;
             height: 98px;
             text-align: center;
         }
         .auto-style2 {
             height: 98px;
+        }
+        .auto-style3 {
+            height: 23px;
+            width: 255px;
+            margin-left: 0px;
         }
         </style>
 </head>
@@ -29,7 +34,10 @@
                     <asp:Label ID="Label2" runat="server" style="font-weight: 700; font-size: x-large" Text="GESTIÓN DE TAREAS GENÉRICAS"></asp:Label>
                 </td>
                 <td class="auto-style2" style="background-color: #808080">
-                    <asp:Button ID="Button1" runat="server" Height="37px" style="text-align: center; margin-left: 35px" Text="Cerrar sesión" />
+                    <div class="auto-style3">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/LogOut.aspx">Cerrar sesión</asp:HyperLink>
+                    </div>
                 </td>
             </tr>
         </table>
@@ -48,7 +56,7 @@ FROM Asignaturas a
 INNER JOIN GruposClase gc ON a.codigo=gc.codigoasig
 WHERE EXISTS (SELECT gp.codigogrupo FROM ProfesoresGrupo gp WHERE gp.codigogrupo=gc.codigo AND gp.email=@email);">
             <SelectParameters>
-                <asp:SessionParameter Name="email" SessionField="usuario" DefaultValue="blanco@ehu.es" />
+                <asp:SessionParameter Name="email" SessionField="usuario" DefaultValue="" />
             </SelectParameters>
         </asp:SqlDataSource>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HADS20ConnectionString %>" SelectCommand="SELECT Codigo, Descripcion, CodAsig, HEstimadas, Explotacion, TipoTarea FROM TareasGenericas WHERE CodAsig=@codasig" UpdateCommand="UPDATE TareasGenericas
@@ -68,7 +76,7 @@ WHERE Codigo=@codigo;
             </UpdateParameters>
         </asp:SqlDataSource>
         <p>
-            <asp:Button ID="Button2" runat="server" Height="67px" style="text-align: center; margin-left: 81px; margin-top: 68px" Text="INSERTAR NUEVA TAREA" Width="212px" />
+            <asp:Button ID="Button2" runat="server" Height="67px" style="text-align: center; margin-left: 81px; margin-top: 68px" Text="INSERTAR NUEVA TAREA" Width="212px" PostBackUrl="~/Profesor/InsertarTarea.aspx" />
         </p>
         <asp:GridView ID="GridView1" runat="server" AllowSorting="True" BorderStyle="None" CssClass="auto-style2" DataSourceID="SqlDataSource1" style="margin-left: 66px; margin-top: 89px" BackColor="White" BorderColor="#CCCCCC" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" AutoGenerateColumns="False" DataKeyNames="Codigo">
             <AlternatingRowStyle BorderColor="#006666" />

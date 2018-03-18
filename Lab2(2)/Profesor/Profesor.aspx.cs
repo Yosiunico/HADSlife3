@@ -11,6 +11,17 @@ namespace Lab2_2_.Profesor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(Session["usuario"] as string))
+            {
+                if (Session["tipo"] != "profesor")
+                {
+                    Server.Transfer("Alumno/Alumno.aspx", true);
+                }
+            }
+            else
+            {
+                Response.Redirect("Inicio.aspx");
+            }
 
         }
     }

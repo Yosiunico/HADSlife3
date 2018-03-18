@@ -35,10 +35,10 @@
     <form id="form1" runat="server">
             <table class="auto-style5">
                 <tr>
-                    <td class="auto-style7">
+                    <td class="auto-style7" style="background-color: #CCCC00">
                         <asp:HyperLink ID="HyperLink1" runat="server">Asignaturas</asp:HyperLink>
                     </td>
-                    <td rowspan="6" style="align-content; text-align: center; text-indent: 0px;">
+                    <td rowspan="6" style="align-content; text-align: center; text-indent: 0px; background-color: #CCCCCC;">
                         <asp:Label ID="Label1" runat="server" Text="Gestión Web de Tareas-Dedicación" CssClass="auto-style6"></asp:Label>
                         <br />
                         <br />
@@ -46,27 +46,27 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style10">
-                        <asp:HyperLink ID="HyperLink2" runat="server">Tareas</asp:HyperLink>
+                    <td class="auto-style10" style="background-color: #CCCC00">
+                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Profesor/TareasProfesor.aspx">Tareas</asp:HyperLink>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style9">
+                    <td class="auto-style9" style="background-color: #CCCC00">
                         <asp:HyperLink ID="HyperLink3" runat="server">Grupos</asp:HyperLink>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style9">
+                    <td class="auto-style9" style="background-color: #CCCC00">
                         <asp:HyperLink ID="HyperLink7" runat="server">Importar v. XMLDocument</asp:HyperLink>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style9">
+                    <td class="auto-style9" style="background-color: #CCCC00">
                         <asp:HyperLink ID="HyperLink6" runat="server">Exportar</asp:HyperLink>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style9">
+                    <td class="auto-style9" style="background-color: #CCCC00">
                         <asp:HyperLink ID="HyperLink5" runat="server">Importar v. DataSet</asp:HyperLink>
                     </td>
                 </tr>

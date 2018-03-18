@@ -37,6 +37,17 @@ namespace DBManager
             return confirmado;
         }
 
+        public bool tareaRepetida(string codigo)
+        {
+            comando = new System.Data.SqlClient.SqlCommand("select codigo from TareasGenericas where codigo=@codigo", conexion);
+            comando.Parameters.AddWithValue("@codigo", codigo);
+            SqlDataReader reader = comando.ExecuteReader();
+            reader.Read();
+            bool rep = reader["codigo"].ToString() == codigo;
+            reader.Close();
+            return rep;
+        }
+
         public void CerrarConexion()
         {
             conexion.Close();
@@ -145,6 +156,7 @@ namespace DBManager
             reader.Close();
             return asignaturas;
         }
+
         public System.Data.DataSet getTareasGenericas(string alumno)
         {
             SqlDataAdapter da = new SqlDataAdapter("select TG1.Codigo, TG1.Descripcion, TG1.HEstimadas, TG1.TipoTarea, GC.codigoasig from(EstudiantesGrupo as EG inner join GruposClase as GC on EG.Grupo = GC.codigo) inner join TareasGenericas as TG1 on GC.codigoasig = TG1.CodAsig where EG.Email = '"+ alumno +"' and not exists(SELECT * FROM EstudiantesTareas WHERE CodTarea = TG1.Codigo and Email = EG.Email)", conexion);
@@ -152,10 +164,18 @@ namespace DBManager
             da.Fill(ds, "TareasGenericas");
             return ds; 
         }
+
+        public SqlDataAdapter getTareasGenericas()
+        {
+            SqlDataAdapter da = new SqlDataAdapter("select * from TareasGenericas", conexion);
+            return da;
+        }
+
         public SqlDataAdapter getTareasAlumno(string alumno) {
             SqlDataAdapter da = new SqlDataAdapter("select * from EstudiantesTareas where Email='"+ alumno +"'", conexion);
             return da;
         }
+
         public bool isAlumno(string usuario) {
             comando = new System.Data.SqlClient.SqlCommand("select tipo from Usuarios where email = @email;", conexion);
             comando.Parameters.AddWithValue("@email", usuario);

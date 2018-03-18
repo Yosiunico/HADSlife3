@@ -17,6 +17,18 @@ namespace Lab2_2_.Alumno
         private DBManager.DBManager dBManager = new DBManager.DBManager();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(Session["usuario"] as string))
+            {
+                if (Session["tipo"] != "alumno")
+                {
+                    Server.Transfer("Profesor/Profesor.aspx", true);
+                }
+            }
+            else
+            {
+                Response.Redirect("Inicio.aspx");
+            }
+
             dBManager.Conectar();
             if (!HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority).Contains("localhost"))
             {
