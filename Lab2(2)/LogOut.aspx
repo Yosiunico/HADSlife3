@@ -10,11 +10,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-        </div>
-        ¡Bienvenido a la página principal!<p>
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Log out" />
-        </p>
+        <p>
+            &nbsp;</p>
     </form>
 </body>
 </html>
