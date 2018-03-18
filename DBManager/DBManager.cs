@@ -42,8 +42,13 @@ namespace DBManager
             comando = new System.Data.SqlClient.SqlCommand("select codigo from TareasGenericas where codigo=@codigo", conexion);
             comando.Parameters.AddWithValue("@codigo", codigo);
             SqlDataReader reader = comando.ExecuteReader();
-            reader.Read();
-            bool rep = reader["codigo"].ToString() == codigo;
+            bool rep;
+            if (reader.Read()) {
+                rep = reader["codigo"].ToString() == codigo;
+            } else {
+                rep = false;
+            }
+            
             reader.Close();
             return rep;
         }

@@ -19,6 +19,7 @@ namespace Lab2_2_.Profesor
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None; //Para evitar errores que surgían en validación.
             if (!string.IsNullOrEmpty(Session["usuario"] as string))
             {
                 if (Session["tipo"] != "profesor")
@@ -42,7 +43,7 @@ namespace Lab2_2_.Profesor
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if(dBManager.tareaRepetida(TextBox1.Text.ToString())) {
+            if(!dBManager.tareaRepetida(TextBox1.Text.ToString())) {
                 DataRow dr = dt.NewRow();
                 dr["Codigo"] = TextBox1.Text.ToString();
                 dr["Descripcion"] = TextBox3.Text.ToString();

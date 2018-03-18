@@ -12,7 +12,7 @@ namespace Lab2_2_
         protected void Page_Load(object sender, EventArgs e)
         {
             Session.Abandon();
-            Response.Redirect("Inicio.aspx");
+            Server.Transfer("Inicio.aspx", true);
         }
     }
 }
