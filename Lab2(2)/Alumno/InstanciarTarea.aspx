@@ -85,6 +85,7 @@
                     </td>
                     <td class="auto-style8">
                         <asp:TextBox ID="txtBoxReales" runat="server" TextMode="Number"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtBoxReales" EnableClientScript="False" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>

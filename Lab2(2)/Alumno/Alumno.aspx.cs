@@ -13,9 +13,9 @@ namespace Lab2_2_
         {
             if (!string.IsNullOrEmpty(Session["usuario"] as string))
             {
-                if (Session["tipo"] != "alumno")
+                if (Session["tipo"].ToString() != "alumno")
                 {
-                    Server.Transfer("Profesor/Profesor.aspx", true);
+                    Server.Transfer("../Profesor/Profesor.aspx", true);
                 }
                 
             }
