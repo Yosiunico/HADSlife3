@@ -57,12 +57,12 @@
                 </tr>
                 <tr>
                     <td class="auto-style9" style="background-color: #CCCC00">
-                        <asp:HyperLink ID="HyperLink7" runat="server">Importar v. XMLDocument</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Profesor/ImportarTareasXMLDoc.aspx">Importar v. XMLDocument</asp:HyperLink>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style9" style="background-color: #CCCC00">
-                        <asp:HyperLink ID="HyperLink6" runat="server">Exportar</asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Profesor/ExportarTareas.aspx">Exportar</asp:HyperLink>
                     </td>
                 </tr>
                 <tr>

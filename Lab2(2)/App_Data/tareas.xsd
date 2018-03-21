@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema xmlns:has="http://ji.ehu.es/has" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="tareas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="tarea">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descripcion" type="xs:string" />
+              <xs:element name="hestimadas" type="xs:unsignedByte" />
+              <xs:element name="explotacion" type="xs:boolean" />
+              <xs:element name="tipotarea" type="xs:string" />
+            </xs:sequence>
+            <xs:attribute name="codigo" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
