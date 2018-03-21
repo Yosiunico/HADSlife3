@@ -15,7 +15,7 @@
             text-align: center;
         }
         #form1 {
-            height: 506px;
+            height: 537px;
         }
     </style>
 </head>
@@ -30,7 +30,7 @@
                     <div style="width: 1006px; height: 64px; margin-top: 0px; margin-bottom: 43px">
                     <asp:Label ID="Label1" runat="server" style="font-size: x-large; font-weight: 700" Text="PROFESOR"></asp:Label>
                         <br />
-                    <asp:Label ID="Label2" runat="server" style="font-weight: 700; font-size: x-large" Text="GESTIÓN DE TAREAS GENÉRICAS"></asp:Label>
+                    <asp:Label ID="Label2" runat="server" style="font-weight: 700; font-size: x-large" Text="IMPORTAR TAREAS GENÉRICAS"></asp:Label>
                     </div>
                 </td>
             </tr>
@@ -45,10 +45,21 @@
         <div style="margin-left: 80px">
             <asp:Label ID="Label3" runat="server" style="font-weight: 700" Text="Seleccionar Asignatura a Importar:"></asp:Label>
             <br />
-        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" Height="19px" style="margin-left: 2px; margin-top: 12px" Width="174px" DataTextField="codigo" DataValueField="codigo">
+        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" OnSelectedIndexChanged="asignatura_SelIndexChan" Height="19px" style="margin-left: 2px; margin-top: 12px" Width="174px" DataTextField="codigo" DataValueField="codigo" AutoPostBack="True">
         </asp:DropDownList>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:HADS20ConnectionString %>" SelectCommand="SELECT a.codigo
+FROM Asignaturas a
+INNER JOIN GruposClase gc ON a.codigo=gc.codigoasig
+WHERE EXISTS (SELECT gp.codigogrupo FROM ProfesoresGrupo gp WHERE gp.codigogrupo=gc.codigo AND gp.email=@email);">
+            <SelectParameters>
+                <asp:SessionParameter Name="email" SessionField="usuario" DefaultValue="" />
+            </SelectParameters>
+        </asp:SqlDataSource>
         </div>
-            <asp:Button ID="Button1" runat="server" Height="67px" style="text-align: center; margin-left: 81px; margin-top: 68px" Text="IMPORTAR (XMLD)" Width="212px" PostBackUrl="~/Profesor/InsertarTarea.aspx" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="margin-left: 639px">
+            <asp:Xml ID="Xml2" runat="server" TransformSource="~/App_Data/XSLTFile.xsl"></asp:Xml>
+        </div>
+&nbsp;<asp:Button ID="Button1" runat="server" Height="67px" style="text-align: center; margin-left: 81px; margin-top: 68px" Text="IMPORTAR (XMLD)" Width="212px" PostBackUrl="~/Profesor/InsertarTarea.aspx" />
         <br />
         <br />
         <br />

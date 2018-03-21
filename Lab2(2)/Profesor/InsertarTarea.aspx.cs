@@ -22,9 +22,9 @@ namespace Lab2_2_.Profesor
             Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None; //Para evitar errores que surgían en validación.
             if (!string.IsNullOrEmpty(Session["usuario"] as string))
             {
-                if (Session["tipo"] != "profesor")
+                if (Session["tipo"].ToString() != "profesor")
                 {
-                    Server.Transfer("Alumno/Alumno.aspx", true);
+                    Server.Transfer("~/Alumno/Alumno.aspx", true);
                 }
             }
             else

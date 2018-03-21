@@ -49,7 +49,7 @@
         <div style="margin-left: 80px">
             <asp:Label ID="Label3" runat="server" style="font-weight: 700" Text="Seleccionar Asignatura:"></asp:Label>
         </div>
-        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" Height="19px" style="margin-left: 83px; margin-top: 12px" Width="174px" DataTextField="codigo" DataValueField="codigo">
+        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" Height="19px" style="margin-left: 83px; margin-top: 12px" Width="174px" DataTextField="codigo" DataValueField="codigo" AutoPostBack="True">
         </asp:DropDownList>
         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:HADS20ConnectionString %>" SelectCommand="SELECT a.codigo
 FROM Asignaturas a

@@ -13,15 +13,16 @@ namespace Lab2_2_.Profesor
         {
             if (!string.IsNullOrEmpty(Session["usuario"] as string))
             {
-                if (Session["tipo"] != "profesor")
+                if (Session["tipo"].ToString() != "profesor")
                 {
-                    Server.Transfer("Alumno/Alumno.aspx", true);
+                    Server.Transfer("~/Alumno/Alumno.aspx", true);
                 }
             }
             else
             {
-                Response.Redirect("Inicio.aspx");
-            }
+                Response.Redirect("../Inicio.aspx");
+            }  
+            
         }
     }
 }
