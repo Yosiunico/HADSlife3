@@ -51,37 +51,47 @@ namespace Lab2_2_.Profesor
         protected void Button1_Click1(object sender, EventArgs e)
         {
             XmlDocument xd = new XmlDocument();
-            xd.Load(Server.MapPath("/App_Data/" + DropDownList2.SelectedValue.ToString() + ".xml"));
-            XmlNodeList tareas = xd.GetElementsByTagName("tarea");            int n = tareas.Count;            string tareasrep = "";            for (int i = 0; i < n; i++)
+            xd.Load(Server.MapPath("../App_Data/" + DropDownList2.SelectedValue.ToString() + ".xml"));
+            XmlNodeList tareas = xd.GetElementsByTagName("tarea");
+            int n = tareas.Count;
+            string tareasrep = "";
+            for (int i = 0; i < n; i++)
             {
-                XmlNode tarea = tareas[i];
 
-                if (!dBManager.tareaRepetida(tarea.Attributes["codigo"].ToString()))
-                {
+                if (!dBManager.tareaRepetida(tareas[i].Attributes["codigo"].Value.ToString()))
+                {   
                     DataRow dr = dt.NewRow();
-                    dr["Codigo"] = tarea.Attributes["codigo"].ToString();
-                    dr["Descripcion"] = tarea.ChildNodes[0].Value.ToString();
+                    dr["Codigo"] = tareas[i].Attributes["codigo"].Value.ToString();
+                    dr["Descripcion"] = tareas[i].ChildNodes[0].InnerText.ToString();
                     dr["CodAsig"] = DropDownList2.SelectedValue.ToString();
-                    dr["HEstimadas"] = int.Parse(tarea.ChildNodes[1].Value);
-                    dr["Explotacion"] = bool.Parse(tarea.ChildNodes[2].Value);
-                    dr["TipoTarea"] = tarea.ChildNodes[3].Value.ToString();
+                    dr["HEstimadas"] = int.Parse(tareas[i].ChildNodes[1].InnerText);
+                    dr["Explotacion"] = bool.Parse(tareas[i].ChildNodes[2].InnerText);
+                    dr["TipoTarea"] = tareas[i].ChildNodes[3].InnerText.ToString();
                     dt.Rows.Add(dr);
+                    
                 }
                 else
                 {
-                    tareasrep += '-' + tarea.Attributes["codigo"].ToString() + Environment.NewLine;
-                    log.Text += tarea.Attributes["codigo"].ToString();
+                    if (i < n - 2) {
+                        tareasrep = tareasrep + tareas[i].Attributes["codigo"].Value.ToString() + ", ";
+                    } else if (i == n - 2) {
+                        tareasrep = tareasrep + tareas[i].Attributes["codigo"].Value.ToString() + " y ";
+                    } else if (i == n - 1) {
+                        tareasrep = tareasrep + tareas[i].Attributes["codigo"].Value.ToString() + ".";
+                    }
+                   
                 }
 
             }
-
-            da.UpdateCommand = cb.GetUpdateCommand();
-            da.Update(ds, "TareasGenericas");
-            da.Update(dt);
-
-            if (!string.IsNullOrEmpty(tareasrep as string))
+                
+                da.UpdateCommand = cb.GetUpdateCommand();
+                da.Update(ds, "TareasGenericas");
+                da.Update(dt);
+                
+            
+            if (tareasrep != "")
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Una o varias tareas han sido omitidas debido a que el código estaba repetido. Las tareas omitidas son las siguientes: " + Environment.NewLine + tareasrep + "');", true);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('¡Tareas insertadas! Advertencia - Las siguientes tareas no se han insertado al tener código repetido: " + tareasrep + "');", true);
             }
             else
             {

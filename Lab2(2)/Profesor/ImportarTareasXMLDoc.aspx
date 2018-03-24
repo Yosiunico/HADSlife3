@@ -62,7 +62,6 @@ WHERE EXISTS (SELECT gp.codigogrupo FROM ProfesoresGrupo gp WHERE gp.codigogrupo
 &nbsp;<asp:Button ID="Button1" runat="server" Height="67px" style="text-align: center; margin-left: 81px; margin-top: 68px" Text="IMPORTAR (XMLD)" Width="212px" OnClick="Button1_Click1" />
         <br />
         <br />
-        <asp:Label ID="log" runat="server"></asp:Label>
         <br />
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
