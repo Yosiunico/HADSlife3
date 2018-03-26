@@ -44,8 +44,7 @@ WHERE EXISTS (SELECT gp.codigogrupo FROM ProfesoresGrupo gp WHERE gp.codigogrupo
             <asp:Label ID="Label3" runat="server" style="font-weight: 700" Text="Seleccionar Asignatura a Importar:"></asp:Label>
                     </td>
                     <td class="auto-style2">
-                        <asp:Label ID="log" runat="server"></asp:Label>
-                    </td>
+                        &nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>

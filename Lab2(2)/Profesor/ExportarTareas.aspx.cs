@@ -24,7 +24,7 @@ namespace Lab2_2_.Profesor
             dv.RowFilter = "CodAsig ='" + DropDownList2.Text.ToString() + "'";
             GridView1.DataSource = dv;
             GridView1.DataBind();
-            log.Text += DropDownList2.Text.ToString() + DropDownList2.Items[DropDownList2.SelectedIndex].Value;
+            
         }
         
         protected void Page_Load(object sender, EventArgs e)
@@ -78,6 +78,8 @@ namespace Lab2_2_.Profesor
             writer.WriteEndElement();
             writer.WriteEndDocument();
             writer.Close();
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('¡Las tareas se han exportado exitosamente!');", true);
+
         }
 
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
