@@ -27,7 +27,7 @@
             <tr>
                 <td class="auto-style1" style="background-color: #808080">
                     <br />
-                    <div style="width: 1006px; height: 64px; margin-top: 0px; margin-bottom: 43px">
+                    <div style="width: 1006px; height: 64px; margin-top: 0px; margin-bottom: 43px; background-color: #808080;">
                     <asp:Label ID="Label1" runat="server" style="font-size: x-large; font-weight: 700" Text="PROFESOR"></asp:Label>
                         <br />
                     <asp:Label ID="Label2" runat="server" style="font-weight: 700; font-size: x-large" Text="IMPORTAR TAREAS GENÉRICAS"></asp:Label>
