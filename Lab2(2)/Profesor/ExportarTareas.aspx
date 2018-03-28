@@ -31,9 +31,7 @@
     </script>
 </head>
 <body>
-    <div id="loading">
-        <img src="../App_Data/hamburger.gif" />
-    </div>
+    
     <form id="form1" runat="server">
         <div style="height: 93px; text-align: center; background-color: #808080">
             <asp:Label ID="Label1" runat="server" CssClass="auto-style1" Text="PROFESOR"></asp:Label>
@@ -85,6 +83,8 @@ WHERE EXISTS (SELECT gp.codigogrupo FROM ProfesoresGrupo gp WHERE gp.codigogrupo
                     <td class="auto-style2">&nbsp;</td>
                 </tr>
             </table>
+    
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Profesor/Profesor.aspx">&lt; Retroceder</asp:HyperLink>
     
     </div>
     </form>
