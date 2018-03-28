@@ -16,9 +16,24 @@
         .auto-style2 {
             width: 350px;
         }
+        #loading {
+            position: absolute; 
+            width: 100%; 
+            height: 100%; 
+            background: gray;
+        }
     </style>
+    <script src="../Scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(window).ready(function() {
+             $('#loading').hide();
+        });
+    </script>
 </head>
 <body>
+    <div id="loading">
+        <img src="../App_Data/hamburger.gif" />
+    </div>
     <form id="form1" runat="server">
         <div style="height: 93px; text-align: center; background-color: #808080">
             <asp:Label ID="Label1" runat="server" CssClass="auto-style1" Text="PROFESOR"></asp:Label>

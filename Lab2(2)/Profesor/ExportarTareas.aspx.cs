@@ -29,6 +29,7 @@ namespace Lab2_2_.Profesor
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            System.Threading.Thread.Sleep(2000);
             if (!string.IsNullOrEmpty(Session["usuario"] as string))
             {
                 if (Session["tipo"].ToString() != "profesor")
@@ -79,6 +80,11 @@ namespace Lab2_2_.Profesor
             writer.WriteEndDocument();
             writer.Close();
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('¡Las tareas se han exportado exitosamente!');", true);
+
+            Response.ContentType = "text/xml";
+            Response.AppendHeader("Content-Disposition", "attachment; filename="+ DropDownList2.SelectedValue.ToString() + ".xml");
+            Response.TransmitFile(Server.MapPath("../App_Data/" + DropDownList2.SelectedValue.ToString() + ".xml"));
+            HttpContext.Current.ApplicationInstance.CompleteRequest();
 
         }
 
