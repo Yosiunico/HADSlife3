@@ -20,7 +20,7 @@ namespace Lab2_2_.Profesor
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None; //Para evitar errores que surgían en validación.
-            if (!string.IsNullOrEmpty(Session["usuario"] as string))
+           /* if (!string.IsNullOrEmpty(Session["usuario"] as string))
             {
                 if (Session["tipo"].ToString() != "profesor")
                 {
@@ -30,7 +30,7 @@ namespace Lab2_2_.Profesor
             else
             {
                 Response.Redirect("Inicio.aspx");
-            }
+            }*/
 
             dBManager = new DBManager.DBManager();
             dBManager.Conectar();

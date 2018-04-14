@@ -23,7 +23,7 @@ namespace Lab2_2_.Alumno
                 Session["in"] = null;
             }
             log.Text += "PostBack" + IsPostBack + " -- " + IsCallback;
-            if (!string.IsNullOrEmpty(Session["usuario"] as string))
+            /*if (!string.IsNullOrEmpty(Session["usuario"] as string))
             {
                 if (Session["tipo"].ToString() != "alumno")
                 {
@@ -33,7 +33,7 @@ namespace Lab2_2_.Alumno
             else
             {
                 Response.Redirect("../Inicio.aspx");
-            }
+            }*/
 
             dBManager.Conectar();
             if (!HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority).Contains("localhost"))

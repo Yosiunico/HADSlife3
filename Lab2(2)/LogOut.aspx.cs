@@ -12,6 +12,7 @@ namespace Lab2_2_
         protected void Page_Load(object sender, EventArgs e)
         {
             Session.Abandon();
+            System.Web.Security.FormsAuthentication.SignOut();
             Server.Transfer("Inicio.aspx", true);
         }
     }

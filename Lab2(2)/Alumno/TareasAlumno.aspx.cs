@@ -13,7 +13,7 @@ namespace Lab2_2_.Alumno
         private DBManager.DBManager dBManager = new DBManager.DBManager();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Session["usuario"] as string))
+            /*if (!string.IsNullOrEmpty(Session["usuario"] as string))
             {
                 if (Session["tipo"].ToString() != "alumno")
                 {
@@ -23,7 +23,7 @@ namespace Lab2_2_.Alumno
             else
             {
                 Response.Redirect("../Inicio.aspx");
-            }
+            }*/
 
             if (!HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority).Contains("localhost"))
             {

@@ -39,6 +39,8 @@ namespace Lab2_2_
                             Server.Transfer("Profesor/Profesor.aspx", true); // Aqui tiene que ir a la dirección del profesor  :D
                         }
 
+                        System.Web.Security.FormsAuthentication.SetAuthCookie(Session["tipo"].ToString(), true);
+
                     }
                     else
                     {

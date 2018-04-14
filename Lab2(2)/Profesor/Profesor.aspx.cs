@@ -11,7 +11,7 @@ namespace Lab2_2_.Profesor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Session["usuario"] as string))
+            /*if (!string.IsNullOrEmpty(Session["usuario"] as string))
             {
                 if (Session["tipo"].ToString() != "profesor")
                 {
@@ -21,7 +21,7 @@ namespace Lab2_2_.Profesor
             else
             {
                 Response.Redirect("../Inicio.aspx");
-            }
+            }*/
 
         }
     }
