@@ -15,6 +15,11 @@ namespace AdditionalServices
         public const string emailemisor = "hads202018@gmail.com";
         public const string passemisor = "Hadslife3";
 
+        private string algoritmoEncriptacionHASH = "MD5";
+        private int iteraciones = 22;
+        private string vectorInicial = "1234567891234567";
+        private int tamanoClave = 128;
+
         public void EnviarEmail(string destinatario, string asunto, string mensaje)
         {
             var dirDe = new MailAddress(emailemisor, emailemisor);
@@ -43,45 +48,57 @@ namespace AdditionalServices
         }
         public byte[] IV = Encoding.ASCII.GetBytes("Devjoker7.37hAES");
 
-        public string Encripta(string Cadena, string Key)
+        public string Encripta(string textoCifrar, string palabraPaso)
         {
-            byte[] Clave = Encoding.ASCII.GetBytes(Key);
-            byte[] inputBytes = Encoding.ASCII.GetBytes(Cadena);
-            byte[] encripted;
-            RijndaelManaged cripto = new RijndaelManaged();
-            using (MemoryStream ms = new MemoryStream(inputBytes.Length))
+            string valorRGBSalt = palabraPaso;
+            try
             {
-                using (CryptoStream objCryptoStream = new CryptoStream(ms, cripto.CreateEncryptor(Clave, IV), CryptoStreamMode.Write))
-                {
-                    objCryptoStream.Write(inputBytes, 0, inputBytes.Length);
-                    objCryptoStream.FlushFinalBlock();
-                    objCryptoStream.Close();
-                }
-                encripted = ms.ToArray();
+                byte[] InitialVectorBytes = Encoding.ASCII.GetBytes(vectorInicial);
+                byte[] saltValueBytes = Encoding.ASCII.GetBytes(valorRGBSalt);
+                byte[] plainTextBytes = Encoding.UTF8.GetBytes(textoCifrar);
+
+                PasswordDeriveBytes password =
+                    new PasswordDeriveBytes(palabraPaso, saltValueBytes,
+                        algoritmoEncriptacionHASH, iteraciones);
+
+                byte[] keyBytes = password.GetBytes(tamanoClave / 8);
+
+                RijndaelManaged symmetricKey = new RijndaelManaged();
+
+                symmetricKey.Mode = CipherMode.CBC;
+
+                ICryptoTransform encryptor =
+                    symmetricKey.CreateEncryptor(keyBytes, InitialVectorBytes);
+
+                MemoryStream memoryStream = new MemoryStream();
+
+                CryptoStream cryptoStream =
+                    new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write);
+
+                cryptoStream.Write(plainTextBytes, 0, plainTextBytes.Length);
+
+                cryptoStream.FlushFinalBlock();
+
+                byte[] cipherTextBytes = memoryStream.ToArray();
+
+                memoryStream.Close();
+                cryptoStream.Close();
+
+                string textoCifradoFinal = Convert.ToBase64String(cipherTextBytes);
+
+                return textoCifradoFinal;
             }
-            return Convert.ToBase64String(encripted);
+            catch
+            {
+                return null;
+            }
+        }
+        public string Invertir(string s)
+        {
+            char[] charArray = s.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
         }
 
-
-
-        public string Desencripta(string Cadena, string Key)
-        {
-            byte[] Clave = Encoding.ASCII.GetBytes(Key);
-            byte[] inputBytes = Convert.FromBase64String(Cadena);
-            byte[] resultBytes = new byte[inputBytes.Length];
-            string textoLimpio = String.Empty;
-            RijndaelManaged cripto = new RijndaelManaged();
-            using (MemoryStream ms = new MemoryStream(inputBytes))
-            {
-                using (CryptoStream objCryptoStream = new CryptoStream(ms, cripto.CreateDecryptor(Clave, IV), CryptoStreamMode.Read))
-                {
-                    using (StreamReader sr = new StreamReader(objCryptoStream, true))
-                    {
-                        textoLimpio = sr.ReadToEnd();
-                    }
-                }
-            }
-            return textoLimpio;
-        }
     }
 }

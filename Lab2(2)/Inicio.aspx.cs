@@ -19,12 +19,14 @@ namespace Lab2_2_
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
             if (db.ExisteEmail(TextBox1.Text))
             {
                 if (db.UsuarioValidado(TextBox1.Text))
                 {
-                    if (db.SesionValida(TextBox1.Text, TextBox2.Text))
+                    AdditionalServices.AdditionalServices additional = new AdditionalServices.AdditionalServices();
+                    String pass = additional.Encripta(TextBox2.Text, additional.Invertir(TextBox1.Text));
+                    
+                    if (db.SesionValida(TextBox1.Text, pass))
                     {
                         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('¡Log in correcto! ¡Bienvenido " + TextBox1.Text + "!')", true);
                         Session["usuario"] = TextBox1.Text;
@@ -65,7 +67,6 @@ namespace Lab2_2_
             {
                 Label4.Text = "El email que ha introducido no es válido ni está registrado.";
             }
-
         }
     }
 }
