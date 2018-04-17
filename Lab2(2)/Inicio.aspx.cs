@@ -1,4 +1,4 @@
-﻿using EmailServices;
+﻿using AdditionalServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,15 +31,17 @@ namespace Lab2_2_
                         if (db.isAlumno(TextBox1.Text.ToString()))
                         {
                             Session["tipo"] = "alumno";
+                            System.Web.Security.FormsAuthentication.SetAuthCookie(Session["tipo"].ToString(), true);
                             Server.Transfer("Alumno/Alumno.aspx", true);
                         }
                         else
                         {
                             Session["tipo"] = "profesor";
+                            System.Web.Security.FormsAuthentication.SetAuthCookie(Session["tipo"].ToString(), true);
                             Server.Transfer("Profesor/Profesor.aspx", true); // Aqui tiene que ir a la dirección del profesor  :D
                         }
 
-                        System.Web.Security.FormsAuthentication.SetAuthCookie(Session["tipo"].ToString(), true);
+
 
                     }
                     else

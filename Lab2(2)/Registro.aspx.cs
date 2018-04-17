@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DBManager;
-using EmailServices;
+using AdditionalServices;
 
 namespace Lab2_2_
 {
@@ -30,7 +30,7 @@ namespace Lab2_2_
             if (insertado)
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('¡Usuario insertado correctamente! En breve recibiras un correo electronico para confirmar tu cuenta')", true);
-                EmailServices.EmailServices emailServices = new EmailServices.EmailServices();
+                AdditionalServices.AdditionalServices emailServices = new AdditionalServices.AdditionalServices();
                 emailServices.EnviarEmail(txtboxEmail.Text, "Confirmar cuenta", "<div><h1>Hola " + txtboxEmail.Text + ".</h1></div><div><h2>¡Confirme su cuenta a través de este enlace!</h2></div><a href='" + HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) + "/Confirmar.aspx?email=" + txtboxEmail.Text + "&cod=" + NumConf.ToString() + "'>Aqui</a>");
             }
             else {

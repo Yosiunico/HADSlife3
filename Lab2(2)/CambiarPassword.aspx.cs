@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using EmailServices;
+using AdditionalServices;
 using DBManager;
 namespace Lab2_2_
 {
@@ -31,7 +31,7 @@ namespace Lab2_2_
         protected void btnMandarMail_Click(object sender, EventArgs e)
         {
             dBManager.Conectar();
-            EmailServices.EmailServices emailServices = new EmailServices.EmailServices();
+            AdditionalServices.AdditionalServices emailServices = new AdditionalServices.AdditionalServices();
             int cod = dBManager.GetCodigo(txtboxEmail.Text);
             if (cod != -1) {
                 emailServices.EnviarEmail(txtboxEmail.Text,"Cambiar contraseña", HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) + "/CambiarPassword.aspx?email=" +txtboxEmail.Text +"&cod="+cod);

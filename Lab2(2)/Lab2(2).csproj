@@ -264,9 +264,9 @@
       <Project>{a684c519-bfa3-4c7a-8461-29b1fa72f467}</Project>
       <Name>DBManager</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EmailServices\EmailServices.csproj">
+    <ProjectReference Include="..\EmailServices\AdditionalServices.csproj">
       <Project>{B20DD200-D6AF-4C99-BF00-557AE9A7A486}</Project>
-      <Name>EmailServices</Name>
+      <Name>AdditionalServices</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

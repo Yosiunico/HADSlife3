@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Net.Mail;
 
-namespace EmailServices
+namespace AdditionalServices
 {
-    public class EmailServices
+    public class AdditionalServices
     {
         public const string emailemisor = "hads202018@gmail.com";
         public const string passemisor = "Hadslife3";
