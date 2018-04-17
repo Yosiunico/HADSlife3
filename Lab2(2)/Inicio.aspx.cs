@@ -28,19 +28,26 @@ namespace Lab2_2_
                     {
                         ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('¡Log in correcto! ¡Bienvenido " + TextBox1.Text + "!')", true);
                         Session["usuario"] = TextBox1.Text;
-                        if (db.isAlumno(TextBox1.Text.ToString()))
-                        {
-                            Session["tipo"] = "alumno";
-                            System.Web.Security.FormsAuthentication.SetAuthCookie(Session["tipo"].ToString(), true);
-                            Server.Transfer("Alumno/Alumno.aspx", true);
-                        }
-                        else
-                        {
-                            Session["tipo"] = "profesor";
-                            System.Web.Security.FormsAuthentication.SetAuthCookie(Session["tipo"].ToString(), true);
-                            Server.Transfer("Profesor/Profesor.aspx", true); // Aqui tiene que ir a la dirección del profesor  :D
-                        }
 
+                        if (!Session["usuario"].ToString().Equals("vadillo@ehu.es")) {
+                            if (db.isAlumno(TextBox1.Text.ToString()))
+                            {
+                                Session["tipo"] = "alumno";
+                                System.Web.Security.FormsAuthentication.SetAuthCookie(Session["tipo"].ToString(), true);
+                                Server.Transfer("Alumno/Alumno.aspx", true);
+                            }
+                            else
+                            {
+                                Session["tipo"] = "profesor";
+                                System.Web.Security.FormsAuthentication.SetAuthCookie(Session["tipo"].ToString(), true);
+                                Server.Transfer("Profesor/Profesor.aspx", true); // Aqui tiene que ir a la dirección del profesor  :D
+                            }
+                        } else
+                        {
+                            Session["tipo"] = Session["usuario"].ToString();
+                            System.Web.Security.FormsAuthentication.SetAuthCookie(Session["tipo"].ToString(), true);
+                            Server.Transfer("Profesor/Profesor.aspx", true);
+                        }
 
 
                     }

@@ -23,6 +23,12 @@ namespace Lab2_2_.Profesor
                 Response.Redirect("../Inicio.aspx");
             }*/
 
+            if(!Session["usuario"].ToString().Equals("vadillo@ehu.es"))
+            {
+                HyperLink6.Enabled = false;
+                HyperLink7.Enabled = false;
+            }
+
         }
     }
 }
