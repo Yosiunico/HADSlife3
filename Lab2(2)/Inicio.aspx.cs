@@ -36,18 +36,22 @@ namespace Lab2_2_
                             {
                                 Session["tipo"] = "alumno";
                                 System.Web.Security.FormsAuthentication.SetAuthCookie(Session["tipo"].ToString(), true);
+                                db.insertarConectado(Session["usuario"].ToString(), Session["tipo"].ToString());
                                 Server.Transfer("Alumno/Alumno.aspx", true);
+
                             }
                             else
                             {
                                 Session["tipo"] = "profesor";
                                 System.Web.Security.FormsAuthentication.SetAuthCookie(Session["tipo"].ToString(), true);
+                                db.insertarConectado(TextBox1.Text, "profesor");
                                 Server.Transfer("Profesor/Profesor.aspx", true); // Aqui tiene que ir a la dirección del profesor  :D
                             }
                         } else
                         {
                             Session["tipo"] = Session["usuario"].ToString();
                             System.Web.Security.FormsAuthentication.SetAuthCookie(Session["tipo"].ToString(), true);
+                            db.insertarConectado(TextBox1.Text, "profesor");
                             Server.Transfer("Profesor/Profesor.aspx", true);
                         }
 

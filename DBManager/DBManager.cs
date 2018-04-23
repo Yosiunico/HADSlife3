@@ -82,6 +82,39 @@ namespace DBManager
             return true;
 
         }
+        public bool insertarConectado(String email, string tipo) {
+            Boolean profesor = tipo.ToLower().CompareTo("profesor".ToLower()) == 0;
+            comando = new System.Data.SqlClient.SqlCommand("insert into Conectados (email, profesor) values (@email,@profesor)", conexion);
+            comando.Parameters.AddWithValue("@email", email);
+            comando.Parameters.AddWithValue("@profesor", profesor);
+            try
+            {
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+            return true;
+
+        }
+        public bool borrarConectado(String email) {
+            comando = new System.Data.SqlClient.SqlCommand("DELETE FROM Conectados WHERE email = @email", conexion);
+            comando.Parameters.AddWithValue("@email", email);
+
+            try
+            {
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+            return true;
+
+        }
 
         public bool SesionValida(string email, string pass)
         {
@@ -180,7 +213,20 @@ namespace DBManager
             SqlDataAdapter da = new SqlDataAdapter("select * from EstudiantesTareas where Email='"+ alumno +"'", conexion);
             return da;
         }
-
+        public System.Data.DataSet getAlumnosConectados()
+        {
+            SqlDataAdapter da = new SqlDataAdapter("select * from Conectados where profesor=0", conexion);
+            System.Data.DataSet ds = new System.Data.DataSet();
+            da.Fill(ds, "Conectados");
+            return ds;
+        }
+        public System.Data.DataSet getProfesoresConectados()
+        {
+            SqlDataAdapter da = new SqlDataAdapter("select * from Conectados where profesor=1", conexion);
+            System.Data.DataSet ds = new System.Data.DataSet();
+            da.Fill(ds, "Conectados");
+            return ds;
+        }
         public bool isAlumno(string usuario) {
             comando = new System.Data.SqlClient.SqlCommand("select tipo from Usuarios where email = @email;", conexion);
             comando.Parameters.AddWithValue("@email", usuario);
