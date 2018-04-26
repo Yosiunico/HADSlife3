@@ -32,7 +32,40 @@
         </style>
 </head>
 <body>
+
+
+
+    
+    
     <form id="form1" runat="server">
+            
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                <ContentTemplate>
+                    <asp:Timer ID="Timer1" runat="server" OnTick="Timer1_Tick" Interval="6000">
+                    </asp:Timer>
+                    <br />
+                    <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <br />
+                    <br />
+                    <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+<br />
+                    <asp:GridView ID="GridView1" runat="server">
+                    </asp:GridView>
+                    <asp:GridView ID="GridView2" runat="server">
+                    </asp:GridView>
+                    <asp:UpdateProgress ID="UpdateProgress1" runat="server">
+                    </asp:UpdateProgress>
+<br />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+    
             <table class="auto-style5">
                 <tr>
                     <td class="auto-style7" style="background-color: #CCCC00">
@@ -72,28 +105,10 @@
                 </tr>
             </table>
         <div>
-            <asp:ScriptManager ID="ScriptManager1" runat="server">
-            </asp:ScriptManager>
-                    <asp:Timer ID="Timer1" runat="server" OnTick="Timer1_Tick" Interval="5000">
-                    </asp:Timer>
             <br />
-            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                <ContentTemplate>
-                    <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
-                    <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
-<br />
-                    <asp:GridView ID="GridView1" runat="server">
-                    </asp:GridView>
-                    <asp:GridView ID="GridView2" runat="server">
-                    </asp:GridView>
-<br />
-                </ContentTemplate>
 
-                <Triggers>
-                    <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
-                </Triggers>
-
-            </asp:UpdatePanel>
+            <br />
+            
             <br />
         </div>
     </form>
