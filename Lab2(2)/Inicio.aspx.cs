@@ -46,7 +46,7 @@ namespace Lab2_2_
                             }
                         } else
                         {
-                            Session["tipo"] = Session["usuario"].ToString();
+                            Session["tipo"] = "coordinador";
                             System.Web.Security.FormsAuthentication.SetAuthCookie(Session["tipo"].ToString(), true);
                             Server.Transfer("Profesor/Profesor.aspx", true);
                         }

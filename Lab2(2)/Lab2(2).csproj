@@ -89,6 +89,7 @@
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\hadslife2 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\hadslife2 - Web Deploy.pubxml" />
+    <Content Include="CoordinatorServices.asmx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -186,6 +187,10 @@
     </Compile>
     <Compile Include="Confirmar.aspx.designer.cs">
       <DependentUpon>Confirmar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CoordinatorServices.asmx.cs">
+      <DependentUpon>CoordinatorServices.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Profesor\ExportarTareas.aspx.cs">
       <DependentUpon>ExportarTareas.aspx</DependentUpon>

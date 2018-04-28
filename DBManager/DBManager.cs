@@ -191,5 +191,16 @@ namespace DBManager
             reader.Close();
             return tipo.Equals("Alumno");
         }
+
+        public int getHorasMediasPorAsignatura(string asignatura) {
+            comando = new System.Data.SqlClient.SqlCommand("SELECT AVG(et.HReales) HorasMedias FROM EstudiantesTareas et INNER JOIN TareasGenericas tg ON et.CodTarea = tg.Codigo WHERE tg.CodAsig = @asignatura", conexion);
+            comando.Parameters.AddWithValue("@email", asignatura);
+            SqlDataReader reader = comando.ExecuteReader();
+            int horasmedias;
+            reader.Read();
+            horasmedias = int.Parse(reader["HorasMedias"].ToString());
+            reader.Close();
+            return horasmedias;
+        }
     }
 }

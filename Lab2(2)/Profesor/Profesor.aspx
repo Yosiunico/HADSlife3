@@ -72,6 +72,29 @@
                 </tr>
             </table>
         <div>
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+            Usuarios logueados:
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <br />
+                    <br />
+                    <br />
+                    <asp:ListBox ID="ListBox1" runat="server" AutoPostBack="True" DataSourceID="ObjectDataSource1"></asp:ListBox>
+                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="IsClientScriptBlockRegistered" TypeName="Lab2_2_.WebForm1">
+                        <SelectParameters>
+                            <asp:SessionParameter Name="key" SessionField="usuario" Type="String" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                    <asp:ListBox ID="ListBox2" runat="server" AutoPostBack="True" DataSourceID="ObjectDataSource1"></asp:ListBox>
+                </ContentTemplate>
+                <Triggers>
+                    <asp:AsyncPostBackTrigger ControlID="ScriptManager1" EventName="PreRender" />
+                </Triggers>
+            </asp:UpdatePanel>
+            <br />
+            <br />
+            <br />
         </div>
     </form>
 </body>
