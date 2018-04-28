@@ -27,11 +27,13 @@ namespace Lab2_2_.Profesor
                 Response.Redirect("../Inicio.aspx");
             }*/
 
-            if(!Session["usuario"].ToString().Equals("coordinador"))
+            if(!Session["tipo"].ToString().Equals("coordinador"))
             {
                 HyperLink6.Enabled = false;
                 HyperLink7.Enabled = false;
+                HyperLink8.Enabled = false;
             }
+
             dBManager.Conectar();
 
         }

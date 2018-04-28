@@ -71,11 +71,16 @@
                     <td class="auto-style7" style="background-color: #CCCC00">
                         <asp:HyperLink ID="HyperLink1" runat="server">Asignaturas</asp:HyperLink>
                     </td>
-                    <td rowspan="6" style="align-content; text-align: center; text-indent: 0px; background-color: #CCCCCC;">
+                    <td rowspan="7" style="align-content; text-align: center; text-indent: 0px; background-color: #CCCCCC;">
                         <asp:Label ID="Label1" runat="server" Text="Gestión Web de Tareas-Dedicación" CssClass="auto-style6"></asp:Label>
                         <br />
                         <br />
                         <asp:Label ID="Label2" runat="server" CssClass="auto-style6" Text="Profesores"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style7" style="background-color: #CCCC00">
+                        <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/Profesor/VerHorasMedias.aspx">Horas medias</asp:HyperLink>
                     </td>
                 </tr>
                 <tr>

@@ -240,7 +240,7 @@ namespace DBManager
 
         public int getHorasMediasPorAsignatura(string asignatura) {
             comando = new System.Data.SqlClient.SqlCommand("SELECT AVG(et.HReales) HorasMedias FROM EstudiantesTareas et INNER JOIN TareasGenericas tg ON et.CodTarea = tg.Codigo WHERE tg.CodAsig = @asignatura", conexion);
-            comando.Parameters.AddWithValue("@email", asignatura);
+            comando.Parameters.AddWithValue("@asignatura", asignatura);
             SqlDataReader reader = comando.ExecuteReader();
             int horasmedias;
             reader.Read();
