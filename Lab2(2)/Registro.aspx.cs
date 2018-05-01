@@ -39,5 +39,20 @@ namespace Lab2_2_
             }
             
         }
+
+        protected void txtboxPsw_TextChanged(object sender, EventArgs e)
+        {
+            FuerzaPass fuerzaPass = new FuerzaPass();
+
+            int fuerza= fuerzaPass.CheckStrength(txtboxPsw.Text.ToString());
+            labelFuerza.Text = "Fortaleza: "+ fuerza + "|| Minimo tiene que ser 2";
+            if (fuerza < 3)
+            {
+                btnRegistro.Enabled = false;
+            }
+            else {
+                btnRegistro.Enabled = true;
+            }
+        }
     }
 }

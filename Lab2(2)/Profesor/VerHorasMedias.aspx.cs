@@ -19,6 +19,7 @@ namespace Lab2_2_.Profesor
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Label4.Text = "Horas medias estimadas por los alumnos: " + cs.ObtenerDedicación(DropDownList1.Text.ToString());
+            
         }
 
 

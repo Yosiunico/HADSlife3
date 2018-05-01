@@ -32,5 +32,27 @@ namespace Lab2_2_.Properties {
                 return ((string)(this["Lab2_2__net_azurewebsites_hadslife2_CoordinatorServices"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://hadslife2.azurewebsites.net/FuerzaPass.asmx")]
+        public string Lab2_2__net_azurewebsites_hadslife21_FuerzaPass {
+            get {
+                return ((string)(this["Lab2_2__net_azurewebsites_hadslife21_FuerzaPass"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:50887/FuerzaPass.asmx")]
+        public string Lab2_2__localhost_FuerzaPass {
+            get {
+                return ((string)(this["Lab2_2__localhost_FuerzaPass"]));
+            }
+        }
+
+        public string Lab2_2__FuerzaPass_FuerzaPass { get; internal set; }
     }
 }

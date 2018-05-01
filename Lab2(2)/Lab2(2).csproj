@@ -95,7 +95,9 @@
     <None Include="Properties\PublishProfiles\hadslife2 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\hadslife2 - Web Deploy.pubxml" />
     <Content Include="CoordinatorServices.asmx" />
+    <Content Include="FuerzaPass.asmx" />
     <Content Include="Profesor\VerHorasMedias.aspx" />
+    <Content Include="Pruebas.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -140,6 +142,17 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <None Include="Web References\localhost\FuerzaPass.wsdl" />
+    <Content Include="Web References\localhost\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\net.azurewebsites.hadslife21\FuerzaPass.wsdl" />
+    <None Include="Web References\localhost\FuerzaPass.disco" />
+    <Content Include="Web References\net.azurewebsites.hadslife21\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <None Include="Web References\net.azurewebsites.hadslife2\CoordinatorServices.wsdl" />
     <Content Include="Web References\net.azurewebsites.hadslife2\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -207,6 +220,10 @@
       <DependentUpon>CoordinatorServices.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FuerzaPass.asmx.cs">
+      <DependentUpon>FuerzaPass.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Profesor\ExportarTareas.aspx.cs">
       <DependentUpon>ExportarTareas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -269,6 +286,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Pruebas.aspx.cs">
+      <DependentUpon>Pruebas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pruebas.aspx.designer.cs">
+      <DependentUpon>Pruebas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -289,6 +313,16 @@
     </Compile>
     <Compile Include="LogOut.aspx.designer.cs">
       <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\localhost\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\net.azurewebsites.hadslife21\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Web References\net.azurewebsites.hadslife2\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -329,6 +363,28 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>Lab2_2__net_azurewebsites_hadslife2_CoordinatorServices</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://hadslife2.azurewebsites.net/FuerzaPass.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\net.azurewebsites.hadslife21\</RelPath>
+      <UpdateFromURL>http://hadslife2.azurewebsites.net/FuerzaPass.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Lab2_2__net_azurewebsites_hadslife21_FuerzaPass</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:50887/FuerzaPass.asmx%3fop=CheckStrength">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\localhost\</RelPath>
+      <UpdateFromURL>http://localhost:50887/FuerzaPass.asmx%3fop=CheckStrength</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Lab2_2__localhost_FuerzaPass</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>

@@ -5,5 +5,11 @@
     <Setting Name="Lab2_2__net_azurewebsites_hadslife2_CoordinatorServices" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://hadslife2.azurewebsites.net/CoordinatorServices.asmx</Value>
     </Setting>
+    <Setting Name="Lab2_2__net_azurewebsites_hadslife21_FuerzaPass" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://hadslife2.azurewebsites.net/FuerzaPass.asmx</Value>
+    </Setting>
+    <Setting Name="Lab2_2__localhost_FuerzaPass" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:50887/FuerzaPass.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

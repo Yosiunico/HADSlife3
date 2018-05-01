@@ -15,7 +15,7 @@
             width: 159px;
         }
         .auto-style3 {
-            width: 667px;
+            width: 622px;
         }
         .auto-style4 {
             width: 964px;
@@ -73,11 +73,22 @@
             <asp:Label ID="Label3" runat="server" Text="Contraseña"></asp:Label>
                     </td>
                     <td class="auto-style3">
-            <asp:TextBox ID="txtboxPsw" runat="server" TextMode="Password"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtboxPsw" ErrorMessage="*" ForeColor="Red" EnableClientScript="False"></asp:RequiredFieldValidator>
+                        <asp:TextBox ID="txtboxPsw" runat="server" AutoPostBack="True" OnTextChanged="txtboxPsw_TextChanged" TextMode="Password" Width="168px"></asp:TextBox>
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                            <ContentTemplate>
+                                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                                </asp:ScriptManager>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtboxPsw" EnableClientScript="False" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:Label ID="labelFuerza" runat="server" Text="Label"></asp:Label>
+                            </ContentTemplate>
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="txtboxPsw" EventName="TextChanged" />
+                            </Triggers>
+                        </asp:UpdatePanel>
                     </td>
                     <td class="auto-style4">
-                        &nbsp;</td>
+                                
+                                </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">
@@ -111,7 +122,14 @@
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style3">
-            <asp:Button ID="btnRegistro" runat="server" Text="Registrarse" OnClick="btnRegistro_Click" />
+                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                            <ContentTemplate>
+                                <asp:Button ID="btnRegistro" runat="server" OnClick="btnRegistro_Click" Text="Registrarse" />
+                            </ContentTemplate>
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger ControlID="txtboxPsw" EventName="TextChanged" />
+                            </Triggers>
+                        </asp:UpdatePanel>
                     </td>
                     <td class="auto-style4">&nbsp;</td>
                 </tr>
