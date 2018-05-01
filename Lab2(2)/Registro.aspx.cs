@@ -49,9 +49,11 @@ namespace Lab2_2_
             if (fuerza < 3)
             {
                 btnRegistro.Enabled = false;
+                labelFuerza.Text = "Fortaleza: " + fuerza + "|| Minimo tiene que ser 2. Intenta añadiendo letras(mayusculas y minusculas), numeros y caracteres especiales. La longitud tambien deberia sobrepasar el 12";
             }
             else {
                 btnRegistro.Enabled = true;
+                labelFuerza.Text = "Fortaleza: " + fuerza;
             }
         }
     }
