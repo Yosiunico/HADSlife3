@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace Lab2_2_.localhost {
+namespace Lab2_2_.es.ehusw {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -23,19 +23,19 @@ namespace Lab2_2_.localhost {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2053.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Web.Services.WebServiceBindingAttribute(Name="FuerzaPassSoap", Namespace="http://tempuri.org/")]
-    public partial class FuerzaPass : System.Web.Services.Protocols.SoapHttpClientProtocol {
+    [System.Web.Services.WebServiceBindingAttribute(Name="MatriculasBinding", Namespace="http://ehusw.es/jav/ServiciosWeb/comprobarmatricula.php?wsdl")]
+    public partial class Matriculas : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
-        private System.Threading.SendOrPostCallback CheckStrengthOperationCompleted;
+        private System.Threading.SendOrPostCallback comprobarOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
-        public FuerzaPass() {
-            this.Url = global::Lab2_2_.Properties.Settings.Default.Lab2_2__FuerzaPass_FuerzaPass;
+        public Matriculas() {
+            this.Url = global::Lab2_2_.Properties.Settings.Default.Lab2_2__es_ehusw_Matriculas;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
@@ -70,34 +70,35 @@ namespace Lab2_2_.localhost {
         }
         
         /// <remarks/>
-        public event CheckStrengthCompletedEventHandler CheckStrengthCompleted;
+        public event comprobarCompletedEventHandler comprobarCompleted;
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/CheckStrength", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public int CheckStrength(string password) {
-            object[] results = this.Invoke("CheckStrength", new object[] {
-                        password});
-            return ((int)(results[0]));
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("https://ehusw.es/jav/ServiciosWeb/comprobarmatricula.php/comprobar", RequestNamespace="http://ehusw.es/jav/ServiciosWeb/comprobarmatricula.php?wsdl", ResponseNamespace="http://ehusw.es/jav/ServiciosWeb/comprobarmatricula.php?wsdl")]
+        [return: System.Xml.Serialization.SoapElementAttribute("z")]
+        public string comprobar(string x) {
+            object[] results = this.Invoke("comprobar", new object[] {
+                        x});
+            return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void CheckStrengthAsync(string password) {
-            this.CheckStrengthAsync(password, null);
+        public void comprobarAsync(string x) {
+            this.comprobarAsync(x, null);
         }
         
         /// <remarks/>
-        public void CheckStrengthAsync(string password, object userState) {
-            if ((this.CheckStrengthOperationCompleted == null)) {
-                this.CheckStrengthOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCheckStrengthOperationCompleted);
+        public void comprobarAsync(string x, object userState) {
+            if ((this.comprobarOperationCompleted == null)) {
+                this.comprobarOperationCompleted = new System.Threading.SendOrPostCallback(this.OncomprobarOperationCompleted);
             }
-            this.InvokeAsync("CheckStrength", new object[] {
-                        password}, this.CheckStrengthOperationCompleted, userState);
+            this.InvokeAsync("comprobar", new object[] {
+                        x}, this.comprobarOperationCompleted, userState);
         }
         
-        private void OnCheckStrengthOperationCompleted(object arg) {
-            if ((this.CheckStrengthCompleted != null)) {
+        private void OncomprobarOperationCompleted(object arg) {
+            if ((this.comprobarCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.CheckStrengthCompleted(this, new CheckStrengthCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.comprobarCompleted(this, new comprobarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -121,27 +122,27 @@ namespace Lab2_2_.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
-    public delegate void CheckStrengthCompletedEventHandler(object sender, CheckStrengthCompletedEventArgs e);
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2053.0")]
+    public delegate void comprobarCompletedEventHandler(object sender, comprobarCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2053.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class CheckStrengthCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class comprobarCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal CheckStrengthCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal comprobarCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public int Result {
+        public string Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((int)(this.results[0]));
+                return ((string)(this.results[0]));
             }
         }
     }

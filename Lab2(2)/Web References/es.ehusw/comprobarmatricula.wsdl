@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ehusw.es/jav/ServiciosWeb/comprobarmatricula.php?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://ehusw.es/jav/ServiciosWeb/comprobarmatricula.php?wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ehusw.es/jav/ServiciosWeb/comprobarmatricula.php?wsdl">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="comprobarRequest">
+    <wsdl:part name="x" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="comprobarResponse">
+    <wsdl:part name="z" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="MatriculasPortType">
+    <wsdl:operation name="comprobar">
+      <wsdl:input message="tns:comprobarRequest" />
+      <wsdl:output message="tns:comprobarResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MatriculasBinding" type="tns:MatriculasPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="comprobar">
+      <soap:operation soapAction="https://ehusw.es/jav/ServiciosWeb/comprobarmatricula.php/comprobar" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://ehusw.es/jav/ServiciosWeb/comprobarmatricula.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://ehusw.es/jav/ServiciosWeb/comprobarmatricula.php?wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Matriculas">
+    <wsdl:port name="MatriculasPort" binding="tns:MatriculasBinding">
+      <soap:address location="https://ehusw.es:443/jav/ServiciosWeb/comprobarmatricula.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

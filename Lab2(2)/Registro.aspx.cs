@@ -11,6 +11,7 @@ namespace Lab2_2_
 {
     public partial class Registro : System.Web.UI.Page
     {
+        es.ehusw.Matriculas mt = new es.ehusw.Matriculas();
         DBManager.DBManager db = new DBManager.DBManager();
         AdditionalServices.AdditionalServices emailServices = new AdditionalServices.AdditionalServices();
         protected void Page_Load(object sender, EventArgs e)
@@ -54,6 +55,17 @@ namespace Lab2_2_
             else {
                 btnRegistro.Enabled = true;
                 labelFuerza.Text = "Fortaleza: " + fuerza;
+            }
+        }
+
+        protected void txtboxEmail_TextChanged(object sender, EventArgs e)
+        {
+            if(mt.comprobar(txtboxEmail.Text.ToString()) == "NO") {
+                Label7.ForeColor = System.Drawing.Color.Red;
+                Label7.Text = "El email introducido no está matriculado.";
+            } else {
+                Label7.ForeColor = System.Drawing.Color.Green;
+                Label7.Text = "El email introducido está matriculado.";
             }
         }
     }

@@ -142,13 +142,12 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <None Include="Web References\localhost\FuerzaPass.wsdl" />
-    <Content Include="Web References\localhost\Reference.map">
+    <None Include="Web References\es.ehusw\comprobarmatricula.wsdl" />
+    <Content Include="Web References\es.ehusw\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
     <None Include="Web References\net.azurewebsites.hadslife21\FuerzaPass.wsdl" />
-    <None Include="Web References\localhost\FuerzaPass.disco" />
     <Content Include="Web References\net.azurewebsites.hadslife21\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -314,7 +313,7 @@
     <Compile Include="LogOut.aspx.designer.cs">
       <DependentUpon>LogOut.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Web References\localhost\Reference.cs">
+    <Compile Include="Web References\es.ehusw\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -375,16 +374,16 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>Lab2_2__net_azurewebsites_hadslife21_FuerzaPass</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost:50887/FuerzaPass.asmx%3fop=CheckStrength">
+    <WebReferenceUrl Include="https://ehusw.es/jav/ServiciosWeb/comprobarmatricula.php%3fwsdl">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\localhost\</RelPath>
-      <UpdateFromURL>http://localhost:50887/FuerzaPass.asmx%3fop=CheckStrength</UpdateFromURL>
+      <RelPath>Web References\es.ehusw\</RelPath>
+      <UpdateFromURL>https://ehusw.es/jav/ServiciosWeb/comprobarmatricula.php%3fwsdl</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>Lab2_2__localhost_FuerzaPass</CachedSettingsPropName>
+      <CachedSettingsPropName>Lab2_2__es_ehusw_Matriculas</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>

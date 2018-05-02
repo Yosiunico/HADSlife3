@@ -35,7 +35,7 @@ namespace Lab2_2_.net.azurewebsites.hadslife21 {
         
         /// <remarks/>
         public FuerzaPass() {
-            this.Url = global::Lab2_2_.Properties.Settings.Default.Lab2_2__FuerzaPass_FuerzaPass;
+            this.Url = global::Lab2_2_.Properties.Settings.Default.Lab2_2__net_azurewebsites_hadslife21_FuerzaPass;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

@@ -46,13 +46,11 @@ namespace Lab2_2_.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:50887/FuerzaPass.asmx")]
-        public string Lab2_2__localhost_FuerzaPass {
+        [global::System.Configuration.DefaultSettingValueAttribute("https://ehusw.es:443/jav/ServiciosWeb/comprobarmatricula.php")]
+        public string Lab2_2__es_ehusw_Matriculas {
             get {
-                return ((string)(this["Lab2_2__localhost_FuerzaPass"]));
+                return ((string)(this["Lab2_2__es_ehusw_Matriculas"]));
             }
         }
-
-        public string Lab2_2__FuerzaPass_FuerzaPass { get; internal set; }
     }
 }
