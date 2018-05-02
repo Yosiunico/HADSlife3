@@ -63,9 +63,11 @@ namespace Lab2_2_
             if(mt.comprobar(txtboxEmail.Text.ToString()) == "NO") {
                 Label7.ForeColor = System.Drawing.Color.Red;
                 Label7.Text = "El email introducido no está matriculado.";
+                btnRegistro.Enabled = false;
             } else {
                 Label7.ForeColor = System.Drawing.Color.Green;
                 Label7.Text = "El email introducido está matriculado.";
+                btnRegistro.Enabled = true;
             }
         }
     }
